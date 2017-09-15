@@ -1,5 +1,7 @@
 JACK'D Members:
-Daniel York
+Jordan Pearson
 Angela Fisher
-Kendall Aresu
 Christine Li
+Kendall Aresu
+'
+Daniel York
