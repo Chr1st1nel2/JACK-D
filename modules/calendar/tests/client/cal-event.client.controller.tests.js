@@ -71,7 +71,7 @@
         $scope: $scope
       });
       // Spy on state go
-      spyOn ($state, 'go');
+      spyOn($state, 'go');
     }));
 
     describe('vm.addEvent()', function () {

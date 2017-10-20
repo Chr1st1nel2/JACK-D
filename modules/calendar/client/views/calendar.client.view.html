@@ -13,6 +13,11 @@
                   Add Event
                 </button>
               </div>
+              <div class="btn-group calTools">
+                <button type="button" class="btn btn-primary" ng-click="vm.addEvent()">
+                  Add Private Event
+                </button>
+              </div>
 <p>
               <ul class="list-unstyled">
                   <li ng-repeat="e in vm.calEvents | filter:vm.selectedDateEvents">
