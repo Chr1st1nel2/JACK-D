@@ -9,6 +9,7 @@
 ## Iteration 1.0
 
 We've divided up the group work as such:
+<<<<<<< HEAD
 - Modify view to display an "Add private event" button when user is logged in (authenticated) - **Angela Fisher**
 - Modify client controller to add an event with public or private setting - **Kendall Aresu**
 - Modify model schema to add an attribute that indicates public or private - **name**
@@ -21,3 +22,15 @@ The 4 server test cases for public/private event handling:
 - The server test case beginning on line 227 of the server routes test file - **Daniel York**
 - The server test case beginning on line 231 of the server routes test file - **name**
 - The server test case beginning on line 235 of the server routes test file - **name**
+=======
+- Modify view to display an "Add private event" button when user is logged in (authenticated) **Angela Fisher**
+- Modify client controller to add an event with public or private setting **Kendall Aresu**
+- Modify model schema to add an attribute that indicates public or private **Christine Li**
+- Modify listing functionality in server controller to query DB appropriately **Christine Li**
+- Modify create functionality in server controller to ensure that a user object is saved with private events, or that a 403 error response is returned **name**
+- Modify CSS file to use `className` attribute to change display color of private events **Angela Fisher**
+- The server test case beginning on line 223 of the server routes test file **name**
+- The server test case beginning on line 227 of the server routes test file **name**
+- The server test case beginning on line 231 of the server routes test file **name**
+- The server test case beginning on line 235 of the server routes test file **name**
+>>>>>>> a1714c41e05a2e1b990a55bf69973fb9645a27db
