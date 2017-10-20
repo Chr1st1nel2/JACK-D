@@ -11,9 +11,9 @@
 We've divided up the group work as such:
 - Modify view to display an "Add private event" button when user is logged in (authenticated) - **Angela Fisher**
 - Modify client controller to add an event with public or private setting - **Kendall Aresu**
-- Modify model schema to add an attribute that indicates public or private - **Christine Li**
+- Modify model schema to add an attribute that indicates public or private - **Kendall Aresu**
 - Modify listing functionality in server controller to query DB appropriately - **Christine Li**
-- Modify create functionality in server controller to ensure that a user object is saved with private events, or that a 403 error response is returned - **Kendall Aresu**
+- Modify create functionality in server controller to ensure that a user object is saved with private events, or that a 403 error response is returned - **Christine Li**
 - Modify CSS file to use `className` attribute to change display color of private events - **Angela Fisher**
 
 The four test cases for handling public/private events:
