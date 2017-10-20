@@ -13,11 +13,11 @@ We've divided up the group work as such:
 - Modify client controller to add an event with public or private setting - **Kendall Aresu**
 - Modify model schema to add an attribute that indicates public or private - **Christine Li**
 - Modify listing functionality in server controller to query DB appropriately - **Christine Li**
-- Modify create functionality in server controller to ensure that a user object is saved with private events, or that a 403 error response is returned - **name**
+- Modify create functionality in server controller to ensure that a user object is saved with private events, or that a 403 error response is returned - **Kendall Aresu**
 - Modify CSS file to use `className` attribute to change display color of private events - **Angela Fisher**
 
 The four test cases for handling public/private events:
 - The server test case beginning on line 223 of the server routes test file - **Daniel York**
 - The server test case beginning on line 227 of the server routes test file - **Daniel York**
-- The server test case beginning on line 231 of the server routes test file - **name**
-- The server test case beginning on line 235 of the server routes test file - **name**
+- The server test case beginning on line 231 of the server routes test file - **Jordan Pearson**
+- The server test case beginning on line 235 of the server routes test file - **Jordan Pearson**
