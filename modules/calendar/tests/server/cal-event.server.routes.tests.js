@@ -104,7 +104,6 @@ describe('CalEvent CRUD tests', function () {
   });
 
 
-
   it('should be able to save a public calendar event if not logged in', function (done) {
     calEvent.public = true;
     agent.post('/api/calendar')
