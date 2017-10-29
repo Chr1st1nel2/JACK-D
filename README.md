@@ -8,7 +8,7 @@
 
 ## Iteration 1.0
 
-We've divided up the group work as such:
+__We've divided up the group work as follows:__
 - Modify view to display an "Add private event" button when user is logged in (authenticated) - **Angela Fisher**
 - Modify client controller to add an event with public or private setting - **Kendall Aresu**
 - Modify model schema to add an attribute that indicates public or private - **Kendall Aresu**
