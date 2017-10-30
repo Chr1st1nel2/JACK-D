@@ -14,15 +14,7 @@ var path = require('path'),
 exports.create = function (req, res) {
   var calEvent = new CalEvent(req.body);
   calEvent.user = req.user;
-
-/*
-need to look for where the event is initially saved
-and
-ensure that the .save() method is only called if the calendar event is either
-private or has a defined user object.
-*/
   if (calEvent.public === true || calEvent.user !== undefined) {
-    console.log('public');
     calEvent.save(function (err) {
       if (err) {
         return res.status(400).send({
