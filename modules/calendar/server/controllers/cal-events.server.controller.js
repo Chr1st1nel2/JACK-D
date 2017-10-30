@@ -21,8 +21,8 @@ and
 ensure that the .save() method is only called if the calendar event is either
 private or has a defined user object.
 */
-  if (calEvent.isPrivate === true || calEvent.user !== null) {
-    // console.log("Private");
+  if (calEvent.public === true || calEvent.user !== null) {
+    console.log('public');
     calEvent.save(function (err) {
       if (err) {
         return res.status(400).send({
@@ -33,7 +33,6 @@ private or has a defined user object.
       }
     });
   } else {
-    // console.log("Not private");
     return res.status(400).send({
       message: 'Must be logged in to save a private event'
     });
