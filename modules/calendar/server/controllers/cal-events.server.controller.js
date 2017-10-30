@@ -21,7 +21,7 @@ and
 ensure that the .save() method is only called if the calendar event is either
 private or has a defined user object.
 */
-  if (calEvent.public === true || calEvent.user !== null) {
+  if (calEvent.public === true || calEvent.user !== undefined) {
     console.log('public');
     calEvent.save(function (err) {
       if (err) {
