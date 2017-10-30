@@ -126,7 +126,7 @@ Here are the dependency injections for this controller. CalendarService is the s
         end: vm.selectedDate.local(),
         className: [className],
         stick: true,
-        publicEvent: isPrivate
+        public: isPrivate
       });
 
       newEvent.$save(function (data) {
