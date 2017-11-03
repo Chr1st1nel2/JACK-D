@@ -14,16 +14,21 @@ var path = require('path'),
 exports.create = function (req, res) {
   var calEvent = new CalEvent(req.body);
   calEvent.user = req.user;
-
-  calEvent.save(function (err) {
-    if (err) {
-      return res.status(400).send({
-        message: errorHandler.getErrorMessage(err)
-      });
-    } else {
-      res.json(calEvent);
-    }
-  });
+  if (calEvent.public === true || calEvent.user !== undefined) {
+    calEvent.save(function (err) {
+      if (err) {
+        return res.status(400).send({
+          message: errorHandler.getErrorMessage(err)
+        });
+      } else {
+        res.json(calEvent);
+      }
+    });
+  } else {
+    return res.status(400).send({
+      message: 'Must be logged in to save a private event'
+    });
+  }
 };
 
 /**
@@ -79,7 +84,7 @@ exports.delete = function (req, res) {
  * List of events
  */
 exports.list = function (req, res) {
-  CalEvent.find().sort('-created').populate('user', 'displayName').exec(function (err, calEvents) {
+  CalEvent.find({ $or: [{ public: true }, { user: req.user ? req.user._id : null }] }).sort('-created').populate('user', 'displayName').exec(function (err, calEvents) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)

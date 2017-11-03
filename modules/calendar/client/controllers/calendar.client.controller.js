@@ -93,7 +93,7 @@ Here are the dependency injections for this controller. CalendarService is the s
     };
 
     /* add custom event*/
-    vm.addEvent = function () {
+    vm.addEvent = function (isPublic) {
       /*
       We could just create a new event like the newEvent object below, using fullcalendar
       format. However, this wouldn't allow us to take advantage of Angular.js
@@ -118,12 +118,15 @@ Here are the dependency injections for this controller. CalendarService is the s
       how this is created, which you'll find in /client/services/calendar.client.service.js
       */
 
+      var className = (isPublic) ? 'publicEvent' : 'privateEvent';
+
       var newEvent = new CalendarService({
         title: 'Coffee Break',
         start: vm.selectedDate.local(),
         end: vm.selectedDate.local(),
-        className: ['coffeeBreak'],
-        stick: true
+        className: [className],
+        stick: true,
+        public: isPublic
       });
 
       newEvent.$save(function (data) {
@@ -133,12 +136,6 @@ Here are the dependency injections for this controller. CalendarService is the s
       });
     };
 
-
-    vm.selectedDateEvents = function (ev) {
-      // returns true if the date of the event matches the selected date.
-      // use as filter for the ng-repeat in the view
-      return moment(ev.start).format('YYYY-MM-DD') === vm.selectedDate.format('YYYY-MM-DD');
-    };
 
     /*
     this associates a custom 'index' value for each element in the list of events. The
