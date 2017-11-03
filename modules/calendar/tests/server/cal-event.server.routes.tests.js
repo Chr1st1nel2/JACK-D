@@ -24,7 +24,7 @@ describe('CalEvent CRUD tests', function () {
 
   before(function (done) {
     // Get application
-    app = express.init(mongoose);
+    app = express.init(mongoose.connection.db);
     agent = request.agent(app);
 
     done();
@@ -202,37 +202,37 @@ describe('CalEvent CRUD tests', function () {
 
 // More tests for private/public event handling
 
-    it('should be able to get a list of private calendar events if logged in', function (done) {
-      agent.post('/api/auth/signin')
-        .send(credentials)
-        .expect(200)
-        .end(function (signinErr, signinRes) {
-          // Handle signin error
-          if (signinErr) {
-            return done(signinErr);
-          }
-
-          // Get the userId
-          var userId = user.id;
-
-          // Create new calendar event model instance
-          var calEventObj = new CalEvent(calEvent);
-
-          // Save the calEvent
-          //TODO: modify this to save only private calendar events
-          calEventObj.save(function () {
-            //Request calEvents
-            request(app).get('/api/calendar')
-              .end(function (req, res) {
-                // Set assertion
-                res.body.should.be.instanceof(Array).and.have.lengthOf(1);
-
-                // Call the assertion callback
-                done();
-              })
-          })
+/*  it('should be able to get a list of private calendar events if logged in', function (done) {
+    agent.post('/api/auth/signin')
+      .send(credentials)
+      .expect(200)
+      .end(function (signinErr, signinRes) {
+        // Handle signin error
+        if (signinErr) {
+          return done(signinErr);
         }
-    });
+
+        // Get the userId
+        var userId = user.id;
+
+        // Create new calendar event model instance
+        var calEventObj = new CalEvent(calEvent);
+
+        // Save the calEvent
+        // Don't bother filtering; just make sure it CAN get a private calendar event (after saving it)
+        calEventObj.save(function () {
+          // Request calEvents
+          request(app).get('/api/calendar')
+            .end(function (req, res) {
+              // Set assertion
+              res.body.should.be.instanceof(Array).and.have.lengthOf(1);
+
+              // Call the assertion callback
+              done();
+            });
+        });
+      });
+  });
 /*
     it('should not be able to get a list of private calendar events if not logged in', function (done) {
 
