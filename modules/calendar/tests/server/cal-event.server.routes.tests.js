@@ -202,7 +202,8 @@ describe('CalEvent CRUD tests', function () {
 
 // More tests for private/public event handling
 
-/*  it('should be able to get a list of private calendar events if logged in', function (done) {
+  it('should be able to get a list of private calendar events if logged in', function (done) {
+    // Sign in
     agent.post('/api/auth/signin')
       .send(credentials)
       .expect(200)
@@ -218,67 +219,95 @@ describe('CalEvent CRUD tests', function () {
         // Create new calendar event model instance
         var calEventObj = new CalEvent(calEvent);
 
-        // Save the calEvent
-        // Don't bother filtering; just make sure it CAN get a private calendar event (after saving it)
+        // Set to private event
+        CalEvent.public = false;
+
+        // Save a new (private) calEvent
+        agent.post('/api/calendar')
+          .send(calEvent)
+          .expect(200)
+          .end(function (calEventSaveErr, calEventSaveRes) {
+            // Handle calEvent save error
+            if (calEventSaveErr) {
+              return done(calEventSaveErr);
+            }
+
+            // Get a list of calendar events
+            calEventObj.save(function () {
+              // Request calEvents
+              request(app).get('/api/calendar')
+                .end(function (req, res) {
+                  // Set assertion
+                  // (2 events should return here. Our private event is one of them.)
+                  res.body.should.be.instanceof(Array).and.have.lengthOf(2);
+
+                  // Call the assertion callback
+                  done();
+                });
+            });
+          });
+      });
+  });
+
+  it('should not be able to get a list of private calendar events if not logged in', function (done) {
+    // Create new calendar event model instance
+    var calEventObj = new CalEvent(calEvent);
+
+    // Get a list of calendar events (we are looking for only one of our events to be returned here.)
+    calEventObj.save(function () {
+      // Request calEvents
+      request(app).get('/api/calendar')
+        .end(function (req, res) {
+          // Set assertion
+          res.body.should.be.instanceof(Array).and.have.lengthOf(1);
+
+          // Call the assertion callback
+          done();
+        });
+    });
+  });
+
+  it('should be able to get a single private calendar event if logged in', function (done) {
+    calEvent.public = false;
+    agent.post('/api/auth/signin')
+      .send(credentials)
+      .expect(200)
+      .end(function (signinErr, signinRes) {
+        // Handle signin error
+        if (signinErr) {
+          return done(signinErr);
+        }
+        // Get the userId
+        var userId = user.id;
+        var calEventObj = new CalEvent(calEvent);
+        // Save the calendar event
         calEventObj.save(function () {
-          // Request calEvents
-          request(app).get('/api/calendar')
+          request(app).get('/api/calendar/' + calEventObj._id)
             .end(function (req, res) {
               // Set assertion
-              res.body.should.be.instanceof(Array).and.have.lengthOf(1);
-
+              res.body.should.be.instanceof(Object).and.have.property('title', calEvent.title);
+              // Set assertions
+              (calEvents[0].user._id).should.equal(userId);
+              (calEvents[0].title).should.match('Calendar Event');
               // Call the assertion callback
               done();
             });
         });
       });
   });
-/*
-    it('should not be able to get a list of private calendar events if not logged in', function (done) {
 
+  it('should not be able to get a single private calendar event if not logged in', function (done) {
+    var calEventObj = new CalEvent(calEvent);
+    calEvent.public = false;
+    // Save the calendar event
+    calEventObj.save(function () {
+      request(app).get('/api/calendar/' + calEventObj._id)
+      .end(function (calendarGetErr, calendarGetRes) {
+        // Handle calEvent get error
+        done(calendarGetErr);
+      });
     });
-*/
-    it('should  be able to get a single private calendar event if logged in', function (done) {
-      calEvent.public = false;
-      agent.post('/api/auth/signin')
-        .send(credentials)
-        .expect(200)
-        .end(function (signinErr, signinRes) {
-          // Handle signin error
-          if (signinErr) {
-            return done(signinErr);
-        }
-      // Get the userId
-      var userId = user.id;
-      var calEventObj = new CalEvent(calEvent);
-      // Save the calendar event
-      calEventObj.save(function () {
-        request(app).get('/api/calendar/' + calEventObj._id)
-          .end(function (req, res) {
-            // Set assertion
-            res.body.should.be.instanceof(Object).and.have.property('title', calEvent.title);
-            // Set assertions
-            (calEvents[0].user._id).should.equal(userId);
-            (calEvents[0].title).should.match('Calendar Event');
-            // Call the assertion callback
-            done();
-          });
-        });
-      });
-   });
-
-    it('should not be able to get a single private calendar event if not logged in', function (done) {
-      var calEventObj = new CalEvent(calEvent);
-      calEvent.public = false;
-      // Save the calendar event
-      calEventObj.save(function () {
-        request(app).get('/api/calendar/' + calEventObj._id)
-        .end(function (calendarGetErr, calendarGetRes) {
-          // Handle calEvent get error
-          done(calendarGetErr);
-        });
-      });
-   });
+  });
 
   afterEach(function (done) {
     User.remove().exec(function () {
