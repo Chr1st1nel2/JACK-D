@@ -12,7 +12,7 @@ main page - **Christine Li**
 about page - **Christine Li** (NOTE: main and about are rather similar)
 leaderboards
 game select
-game (this is its own collection of modules: one for each game) - Jordan??
+game (this is its own collection of modules: one for each game)
 
 
 ## Iteration 1.0
