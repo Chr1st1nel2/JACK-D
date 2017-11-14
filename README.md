@@ -5,6 +5,15 @@
 ##### Members: Jordan Pearson, Angela Fisher, Christine Li, Kendall Aresu, and Daniel York
 
 
+## Iteration 2.0
+Module List (to be implemented, as of Nov 14, 2017):
+settings
+main page - **Christine Li**
+about page - **Christine Li** (NOTE: main and about are rather similar)
+leaderboards
+game select
+game (this is its own collection of modules: one for each game) - Jordan??
+
 
 ## Iteration 1.0
 
