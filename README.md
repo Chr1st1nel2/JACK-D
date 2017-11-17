@@ -24,6 +24,9 @@ __Module(s) to be Created/Removed:__
 - remove calendar module **Kendall Aresu**
 - remove articles module **Kendall Aresu**
 
+__Front End Updates:__
+- home page + header - **Jordan Pearson**
+
 ## Iteration 1.0
 
 __We've divided up the group work as follows:__
