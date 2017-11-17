@@ -18,14 +18,14 @@ Back End:
 - about page - **Christine Li** (NOTE: main and about are rather similar)
 - leaderboards
 - game select
-- game (this is its own collection of modules: one for each game) - **Jordan Pearson**
+- games - 
 Front End:
 - settings
 - main page - **Jordan Pearson**
 - about page -
 - leaderboards
 - game select
-- game (this is its own collection of modules: one for each game) - **Jordan Pearson**
+- games - **Jordan Pearson**
 Clarify views vs modules??
 
 __Goal:__ have a basic shell of the site.
