@@ -11,7 +11,7 @@ __Goal:__ To set up the shell of our site, getting the foundations of the needed
 
 __Pages to be Added:__
 - home page - **Christine Li**
-- about page - **Daniel York**
+- about page - **Christine Li**
 - leaderboards - **Christine Li**
 - game selection - **Angela Fisher**
 - games - **Daniel York**
