@@ -7,13 +7,25 @@
 
 ## Iteration 2.0
 __Module List (to be implemented, as of Nov 14, 2017):__
+- Core
+- Game
+- User
+
+__TODO List (to be implemented, as of Nov 14, 2017):__
+Back End:
 - settings
 - main page - **Christine Li**
-- about page (is this its own module?)- **Christine Li** (NOTE: main and about are rather similar)
+- about page - **Christine Li** (NOTE: main and about are rather similar)
 - leaderboards
 - game select
 - game (this is its own collection of modules: one for each game) - **Jordan Pearson**
-
+Front End:
+- settings
+- main page - **Jordan Pearson**
+- about page -
+- leaderboards
+- game select
+- game (this is its own collection of modules: one for each game) - **Jordan Pearson**
 Clarify views vs modules??
 
 __Goal:__ have a basic shell of the site.
