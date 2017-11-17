@@ -6,17 +6,17 @@
 
 
 ## Iteration 2.0
-Module List (to be implemented, as of Nov 14, 2017):
-settings
-main page - **Christine Li**
-about page (is this its own module?)- **Christine Li** (NOTE: main and about are rather similar)
-leaderboards
-game select
-game (this is its own collection of modules: one for each game) - **Jordan Pearson**
+__Module List (to be implemented, as of Nov 14, 2017):__
+- settings
+- main page - **Christine Li**
+- about page (is this its own module?)- **Christine Li** (NOTE: main and about are rather similar)
+- leaderboards
+- game select
+- game (this is its own collection of modules: one for each game) - **Jordan Pearson**
 
 Clarify views vs modules??
 
-Goal: have a basic shell of the site.
+__Goal:__ have a basic shell of the site.
 
 Deal with linking from one page to another.
 
