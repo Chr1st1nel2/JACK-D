@@ -5,32 +5,28 @@
 ##### Members: Jordan Pearson, Angela Fisher, Christine Li, Kendall Aresu, and Daniel York
 
 
+
 ## Iteration 2.0
-__Module List (to be implemented, as of Nov 14, 2017):__
-- Core
-- Game
-- User
 
-__TODO List (to be implemented, as of Nov 14, 2017):__
-Back End:
-- settings
-- main page - **Christine Li**
-- about page - **Christine Li** (NOTE: main and about are rather similar)
-- leaderboards
-- game select
-- games -
-Front End:
-- settings
-- main page - **Jordan Pearson**
-- about page -
-- leaderboards
-- game select
-- games - **Jordan Pearson**
-Clarify views vs modules??
+__Goal:__ To set up the shell of our site, getting the foundations of the needed modules and the basic versions of the pages up and running.
 
-__Goal:__ have a basic shell of the site.
+__Pages to be Added:__
+- home page - **Christine Li**
+- about page - **Christine Li**
+- leaderboards - **Christine Li**
+- game selection - **Angela Fisher**
+- games - **Daniel York**
+- settings - **Angela Fisher**
+__Back End Updates:__
+- create games module - **Jordan Pearson**
+  - game files
+  - game schema
+- remove calendar module - **Kendall Aresu**
+- remove articles module - **Kendall Aresu**
+- integrate games module - **Angela Fisher**
+__Front End Updates:__
+- home page + header - **Jordan Pearson**
 
-Deal with linking from one page to another.
 
 
 ## Iteration 1.0

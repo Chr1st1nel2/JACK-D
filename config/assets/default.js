@@ -39,6 +39,9 @@ module.exports = {
     less: [
       'modules/*/client/less/*.less'
     ],
+    fonts: [
+      'modules/*/client/fronts/*.eot'
+    ],
     sass: [
       'modules/*/client/scss/*.scss'
     ],
