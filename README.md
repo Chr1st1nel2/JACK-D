@@ -5,6 +5,7 @@
 ##### Members: Jordan Pearson, Angela Fisher, Christine Li, Kendall Aresu, and Daniel York
 
 
+
 ## Iteration 2.0
 
 __Goal:__ To set up the shell of our site, getting the foundations of the needed modules and the basic versions of the pages up and running.
@@ -16,16 +17,17 @@ __Pages to be Added:__
 - game selection - **Angela Fisher**
 - games - **Daniel York**
 - settings - **Angela Fisher**
-
-__Module(s) to be Created/Removed:__
+__Back End Updates:__
 - create games module - **Jordan Pearson**
   - game files
   - game schema
-- remove calendar module **Kendall Aresu**
-- remove articles module **Kendall Aresu**
-
+- remove calendar module - **Kendall Aresu**
+- remove articles module - **Kendall Aresu**
+- integrate games module - **Angela Fisher**
 __Front End Updates:__
 - home page + header - **Jordan Pearson**
+
+
 
 ## Iteration 1.0
 
