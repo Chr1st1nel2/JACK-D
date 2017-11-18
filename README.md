@@ -18,7 +18,7 @@ Back End:
 - about page - **Christine Li** (NOTE: main and about are rather similar)
 - leaderboards
 - game select
-- games - 
+- games -
 Front End:
 - settings
 - main page - **Jordan Pearson**
