@@ -6,7 +6,7 @@
     .factory('ArticlesService', ArticlesService);
 
   ArticlesService.$inject = ['$resource', '$log'];
-
+  
   function ArticlesService($resource, $log) {
     var Article = $resource('/api/articles/:articleId', {
       articleId: '@_id'

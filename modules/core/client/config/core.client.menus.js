@@ -19,6 +19,24 @@
       roles: ['user']
     });
 
+    menuService.addMenuItem('topbar', {
+      title: 'About',
+      state: 'about',
+      roles: ['*']
+    });
+
+    menuService.addMenuItem('topbar', {
+      title: 'Setting',
+      state: 'setting',
+      roles: ['*']
+    });
+
+    menuService.addMenuItem('topbar', {
+      title: 'Leaderboard',
+      state: 'leaderboard',
+      roles: ['*']
+    });
+
     menuService.addSubMenuItem('account', 'settings', {
       title: 'Edit Profile',
       state: 'settings.profile'
