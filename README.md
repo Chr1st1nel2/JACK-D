@@ -28,6 +28,20 @@ __Front End Updates:__
 - home page + header - **Jordan Pearson**
 
 
+__Screenshots:__
+
+Main page:
+![it1_main](/screenshots/it1_main.jpg)
+
+About page:
+![it1_about](/screenshots/it1_about.png)
+
+Settings page:
+![it1_settings](/screenshots/it1_settings.png)
+
+Leaderboards page:
+![it1_leaderboards](/screenshots/it1_leaderboards.png)
+
 
 ## Iteration 1.0
 
