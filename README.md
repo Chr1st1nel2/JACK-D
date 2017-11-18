@@ -31,16 +31,16 @@ __Front End Updates:__
 __Screenshots:__
 
 Main page:
-![it1_main](/screenshots/it1_main.jpg)
+![it1_main](/screenshots/iteration1/it1_main.jpg)
 
 About page:
-![it1_about](/screenshots/it1_about.png)
+![it1_about](/screenshots/iteration1/it1_about.png)
 
 Settings page:
-![it1_settings](/screenshots/it1_settings.png)
+![it1_settings](/screenshots/iteration1/it1_settings.png)
 
 Leaderboards page:
-![it1_leaderboards](/screenshots/it1_leaderboards.png)
+![it1_leaderboards](/screenshots/iteration1/it1_leaderboards.png)
 
 
 ## Iteration 1.0
