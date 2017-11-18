@@ -15,9 +15,8 @@ __Pages to be Added:__
 - about page - **Christine Li**
 - leaderboards - **Christine Li**
 - game selection - **Angela Fisher**
-- games - **Daniel York**
+- games - to be done
 - settings - **Angela Fisher**
-
 __Back End Updates:__
 - create games module - **Jordan Pearson**
   - game files
@@ -25,7 +24,6 @@ __Back End Updates:__
 - remove calendar module - **Kendall Aresu**
 - remove articles module - **Kendall Aresu**
 - integrate games module - **Angela Fisher**
-
 __Front End Updates:__
 - home page + header - **Jordan Pearson**
 
