@@ -17,6 +17,7 @@ __Pages to be Added:__
 - game selection - **Angela Fisher**
 - games - **Daniel York**
 - settings - **Angela Fisher**
+
 __Back End Updates:__
 - create games module - **Jordan Pearson**
   - game files
@@ -24,6 +25,7 @@ __Back End Updates:__
 - remove calendar module - **Kendall Aresu**
 - remove articles module - **Kendall Aresu**
 - integrate games module - **Angela Fisher**
+
 __Front End Updates:__
 - home page + header - **Jordan Pearson**
 
