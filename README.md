@@ -40,7 +40,7 @@ Settings page:
 ![it1_settings](/screenshots/iteration1/it1_settings.png)
 
 Leaderboards page:
-![it1_leaderboards](/screenshots/iteration1/t1_leaderboards.png)
+![it1_leaderboards](/screenshots/iteration1/it1_leaderboards.png)
 
 
 ## Iteration 1.0
