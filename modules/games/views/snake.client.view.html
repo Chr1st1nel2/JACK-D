@@ -33,7 +33,6 @@
 angular.module('ngSnake', [])
 
   .controller('snakeCtrl', function($scope, $timeout, $window) {
-      console.log("running the module");
     var elem = document.getElementById('gameContainer');
     var BOARD_SIZE = 20;
     var CANVAS_HEIGHT = 400;
@@ -45,7 +44,6 @@ angular.module('ngSnake', [])
     var params = { width: 600, height: 400 };
 
     var two = new Two(params).appendTo(elem);
-    console.log("two: " + two);
 
     var DIRECTIONS = {
       LEFT: 65,
@@ -57,7 +55,6 @@ angular.module('ngSnake', [])
     two.update();
 
    var drawFrame = function(){
-  console.log("draw frame");
      var frameRect = two.makeRectangle(CANVAS_WIDTH/2, CANVAS_HEIGHT/2, CANVAS_WIDTH, CANVAS_HEIGHT);
 
      frameRect.stroke = 'black';
@@ -123,7 +120,6 @@ angular.module('ngSnake', [])
     };
 
     function update() {
-      console.log("update");
       two.update;
       drawFrame();
       var newHead = getNewHead();

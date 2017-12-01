@@ -26,7 +26,6 @@ var PADDLE_HEIGHT = 100;
 var PADDLE_WIDTH = 20;
 var BALL_SIZE = 12;
 
-
 var PADDLE1_XPOS = 50;
 var PADDLE2_XPOS = 500;
 
@@ -52,11 +51,25 @@ var player2Y = 100;
 var SPEED = 3;
 
 
-var ballX = 100;
-var ballY = PADDLE_HEIGHT + 52  ;
+var ballX = 300;
+var ballY = 200;
+var ballVelX;
+var ballVelY;
 
-var ballVelX = SPEED;
-var ballVelY = SPEED;
+var coinFlipX = Math.floor(Math.random() * 2);
+var coinFlipY = Math.floor(Math.random() * 2);
+  if (coinFlipX) {
+    ballVelX = SPEED;
+  }
+  else{
+    ballVelX = -SPEED;
+  }
+  if (coinFlipY) {
+    ballVelY = SPEED;
+  }
+  else{
+    ballVelY = -SPEED;
+  }
 
 
 var W = 87;
@@ -109,12 +122,12 @@ var offset = 50;
 var ballTop =    ballY - BALL_SIZE/2;
 var ballBottom = offset + ballY + BALL_SIZE/2;
 
-//TODO preform collision check
+//perform collision check
 
 
 if( ballRight > PADDLE2_XPOS - 15 ){
 
-//TODO end round in favor of P1;
+//end round in favor of P1;
 // System.exit
 throw new Error("PLAYER 1 Won round!");
 
@@ -123,7 +136,7 @@ throw new Error("PLAYER 1 Won round!");
 
 if( ballLeft < PADDLE1_XPOS - 20  ){
 
-//TODO end round in favor of P2;
+//end round in favor of P2;
 throw new Error("PLAYER 2  Won round!");
 
 }
@@ -135,7 +148,6 @@ throw new Error("PLAYER 2  Won round!");
 //if ballRight is inside of paddle 2 && ball is within the height && width of the paddle, then invert it
 if(ballRight > PADDLE2_XPOS - 20      && ( (ballBottom > player2Y ) && (ballTop < (player2Y + PADDLE_HEIGHT- 55)) )  && !rightActiveCollision){
 
-//TODO  Right paddle collision – invert direction of ball
 ballVelX *= 1.2;
 ballVelY *= 1.2;
 ballVelX = -ballVelX;
@@ -149,10 +161,10 @@ clear = false;
 
 }
 
-
+//if ballLeft is inside of paddle 1 && ball is within the height && width of the paddle, then invert it
 if(ballLeft < (PADDLE1_XPOS + PADDLE_WIDTH  + 0)    && ( (ballBottom > player1Y ) && (ballTop < (player1Y + PADDLE_HEIGHT- 55)) ) && !leftActiveCollision   ){
 
-//TODO  Left paddle collision – invert direction of ball
+//Left paddle collision – invert direction of ball
 ballVelX = -ballVelX;
 leftActiveCollision = true;
 clear = true;
@@ -170,14 +182,12 @@ console.log("Left paddle collision recoil");
 
 if(ballTop <= 15){
 
-//TODO: invert y velocity
 ballVelY = -ballVelY;
 
 }
 
 if(ballBottom >= CANVAS_HEIGHT+30){
 
-//TODO: invert y velocity
 ballVelY = -ballVelY;
 
 }
