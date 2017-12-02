@@ -193,7 +193,7 @@ main[role="main-home-wrapper"] article[role="pge-title-content"] header h2 span,
 main[role="main-home-wrapper"] article[role="pge-title-content"] p,main[role="main-inner-wrapper"] article[role="pge-title-content"] p{ font-size:20px; line-height:30px; color:#454545}
 
 /*===== leaderboard ===*/
-
+ 
 main[role="main-home-wrapper"] table[role="table"] tbody tr,main[role="main-inner-wrapper"] table[role="table"] tbody tr{ padding-bottom:66px}
 
 .container th h1 {
@@ -251,7 +251,7 @@ main[role="main-home-wrapper"] table[role="table"] tbody tr,main[role="main-inne
 
 footer[role="footer"]{ background-color:#FFF; padding-top:100px; padding-bottom:77px}
 
-footer[role="footer"] > h1 a{ margin:0 auto; display:block; max-width:66px;}
+footer[role="footer"] > h1 a{ margin:0 auto; display:block; max-width:66px}
 
 footer[role="footer"] nav{ padding-top:37px; padding-bottom:43px}
 
