@@ -46,16 +46,16 @@ Home page:
 ![itr3_home](/screenshots/iteration3/itr3_home.png)
 
 GameSelect page:
-![it3_games](/screenshots/iteration3/itr3_games.png)
+![it3_games](/screenshots/iteration3/ite3_games.png)
 
 Leaderboard page:
-![it3_leaderboard](/screenshots/iteration3/it3_leaderboard.png)
+![it3_leaderboard](/screenshots/iteration3/itr3_leaderboard.png)
 
 Pong game:
-![it3_Pong](/screenshots/iteration3/it3_Pong.png)
+![it3_Pong](/screenshots/iteration3/itr3_Pong.png)
 
 Snake game:
-![it3_snake](/screenshots/iteration3/it3_snake.png)
+![it3_snake](/screenshots/iteration3/itr3_snake.png)
 
 
 
