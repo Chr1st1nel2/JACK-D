@@ -15,6 +15,9 @@
         <text x="0" y="15" fill="red"><font id='player1Score'size="200"></font></text>
     </svg>
 
+    <h1 style="postion:absolute;left:30px;top:80px;">Score 1:<span id="score1">0</span></h1>
+    <h1 style="position.absolute;right:30px;top:80px;">Score 2:<span id="score2">0</span></h1>
+
 <div id='draw-shapes'>
 </div>
 
@@ -28,6 +31,8 @@ var BALL_SIZE = 12;
 
 var PADDLE1_XPOS = 50;
 var PADDLE2_XPOS = 500;
+var score1;
+var score2;
 
 var params = { width: 600, height: 400 };
 var two = new Two(params).appendTo(elem);
@@ -140,6 +145,18 @@ if( ballLeft < PADDLE1_XPOS - 20  ){
 throw new Error("PLAYER 2  Won round!");
 
 }
+
+//scoring
+if(ballLeft <= PADDLE_WIDTH){
+  if(ballTop > PADDLE1_XPOS && ballTop < PADDLE1_XPOS + PADDLE_HEIGHT){
+    ballVelX = -ballVelX
+  } else {
+    score1++;
+    drawBall();
+  }
+}
+document.getElementById('score1').innerHTML = score1.toString();
+document.getElementById('score2').innerHTML = score2.toString();
 
 // console.log("ballBottom: " + ballBottom + "; paddle Top: "+ player2Y + "P2 Y collision: " + ( (ballBottom > player2Y ) && (ballTop < (player2Y + PADDLE_HEIGHT- 55)) ) );
 
