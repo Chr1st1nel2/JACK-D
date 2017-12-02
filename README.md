@@ -33,7 +33,11 @@ Jordan Pearson-
 - placeholder
 
 Christine Li-
-- placeholer
+- added Leaderboard
+- fixed the layouts in the gameSelect page
+- linked the gameSelect page to the individual game pages
+- Added little icons in the top navbar
+- put more functions in the new site-wide footer 
 
 
 

@@ -194,7 +194,7 @@ main[role="main-home-wrapper"] article[role="pge-title-content"] header h2 span,
 main[role="main-home-wrapper"] article[role="pge-title-content"] p,main[role="main-inner-wrapper"] article[role="pge-title-content"] p{ font-size:20px; line-height:30px; color:#454545}
 
 /*===== leaderboard ===*/
- 
+
 main[role="main-home-wrapper"] table[role="table"] tbody tr,main[role="main-inner-wrapper"] table[role="table"] tbody tr{ padding-bottom:66px}
 
 .container th h1 {
@@ -246,6 +246,42 @@ main[role="main-home-wrapper"] table[role="table"] tbody tr,main[role="main-inne
 	  transition-duration: 0.4s;
 	  transition-property: all;
   transition-timing-function: line;
+}
+
+/* bottom footer */
+.bottomNavbar {
+    background-color: #353535;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.bottomNavbar a, .bottomNavbar p {
+    float: left;
+    display: block;
+    color: #9d9d9d;
+    text-align: center;
+    padding: 20px 15px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.bottomNavbar .copy-right {
+		color: #9d9d9d;
+		font-weight: 300;
+		text-transform: uppercase;
+		padding: 23px 15px;
+		margin-right: 12px;
+		font-size: 12px;
+		display: inline-block;
+		vertical-align: middle;
+		font-family: "futura-pt",sans-serif;
+}
+
+/* Change the color of links on hover */
+.bottomNavbar a:hover {
+    color: white;
 }
 
 /*===== footer ===*/
@@ -382,6 +418,6 @@ div.homepage {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  
+
 }
 >>>>>>> cd0f64c7c53fbb113efde6a90ded4e431b304909
