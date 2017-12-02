@@ -30,14 +30,15 @@ Daniel York-
 - placeholder
 
 Jordan Pearson-
-- placeholder
+- implemented Pong game javascript code
+- implemented Snake game javascript code
 
 Christine Li-
 - added Leaderboard
 - fixed the layouts in the gameSelect page
 - linked the gameSelect page to the individual game pages
 - Added little icons in the top navbar
-- put more functions in the new site-wide footer 
+- put more functions in the new site-wide footer
 
 
 
