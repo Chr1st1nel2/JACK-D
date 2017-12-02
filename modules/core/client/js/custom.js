@@ -1,4 +1,6 @@
-
+/* eslint-disable */
+
+
 // JavaScript Document
 $('#subscribeform').submit(function(){
 

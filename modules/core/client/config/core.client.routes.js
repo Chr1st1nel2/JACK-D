@@ -45,9 +45,27 @@
         controller: 'HomeController',
         controllerAs: 'vm'
       })
-      .state('leaderboard', {
-        url: '/leaderboard',
-        templateUrl: '/modules/core/client/views/leaderboard.client.view.html',
+      .state('leaderboards', {
+        url: '/leaderboards',
+        templateUrl: '/modules/games/client/views/leaderboard.client.view.html',
+        controller: 'HomeController',
+        controllerAs: 'vm'
+      })
+      .state('gameSelect', {
+        url: '/games',
+        templateUrl: '/modules/games/client/views/gameSelect.client.view.html',
+        controller: 'HomeController',
+        controllerAs: 'vm'
+      })
+      .state('pong', {
+        url: '/games/pong',
+        templateUrl: '/modules/games/client/views/pong.client.view.html',
+        controller: 'HomeController',
+        controllerAs: 'vm'
+      })
+      .state('snake', {
+        url: '/games/snake',
+        templateUrl: '/modules/games/client/views/snake.client.view.html',
         controller: 'HomeController',
         controllerAs: 'vm'
       })

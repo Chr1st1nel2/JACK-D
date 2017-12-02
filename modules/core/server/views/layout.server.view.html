@@ -46,6 +46,13 @@
     </section>
   </section>
 
+  <header ng-include="'/modules/core/client/views/footer.client.view.html'" class="footer"></header>
+  <section class="content">
+    <section class="container">
+      {{{block "content"}}}
+    </section>
+  </section>
+
   <noscript>
     <style>
       [ng\:cloak], [ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {

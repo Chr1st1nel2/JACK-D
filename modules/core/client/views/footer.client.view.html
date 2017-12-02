@@ -1,0 +1,38 @@
+  <!-- Buttons on the right hand side of the footer-->
+<!--<div class="container" ng-controller="FooterController as vm">
+
+  <ul class="nav navbar-nav navbar-right">
+    <li ng-repeat="item in vm.menu.items | orderBy: 'position'" ng-switch="item.type" ng-class="{ dropdown: item.type === 'dropdown' }" ui-sref-active="active" class="{{item.class}}" uib-dropdown="item.type === 'dropdown'">
+      <a ng-switch-when="dropdown" class="dropdown-toggle" uib-dropdown-toggle role="button">{{::item.title}}&nbsp;<span class="caret"></span></a>
+      <ul ng-switch-when="dropdown" class="dropdown-menu">
+        <li ng-repeat="subitem in item.items | orderBy: 'position'">
+          <a ui-sref="{{subitem.state}}({{subitem.params}})" ng-bind="subitem.title"></a>
+        </li>
+      </ul>
+      <a ng-switch-default ui-sref="{{item.state}}" ng-bind="item.title"></a>
+    </li>
+  </ul>
+</div>
+<div class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="bottomNavbar">
+   <div class="container" ng-controller="FooterController as vm">
+      <p class="copy-right">&copy; JACK'D, 2017 </p>
+      <a href="/games" target="_top">Games</a>
+      <a href="/about" target="_top">About</a>
+      <a href="/leaderboards" target="_top">Leaderboard</a>
+    </div>
+  </div>
+</div>-->
+<nav class="navbar navbar-inverse navbar-relative-bottom" style="bottom:100%">
+  <div class="container" ng-controller="FooterController as vm">
+    <a class="navbar-brand" style="font-size:12px">&copy; JACK'D, 2017</a>
+    <ul class="nav navbar-nav">
+      <li><a href="/games" target="_top">Games</a></li>
+      <li><a href="/setting" target="_top" title="Settings">Settings</a></li>
+      <li><a href="/leaderboards" target="_top" title="Leaderboard">Leaderboard</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/games" target="_top" title="Back">Back</a></li>
+      <li><a href="/about" target="_top" title="About">About</a></li>
+  </div>
+</nav>

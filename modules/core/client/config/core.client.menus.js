@@ -19,21 +19,21 @@
       roles: ['user']
     });
 
-    menuService.addMenuItem('topbar', {
+    menuService.addMenuItem('botbar', {
       title: 'About',
       state: 'about',
       roles: ['*']
     });
 
     menuService.addMenuItem('topbar', {
-      title: 'Setting',
+      title: 'Settings',
       state: 'setting',
       roles: ['*']
     });
 
     menuService.addMenuItem('topbar', {
-      title: 'Leaderboard',
-      state: 'leaderboard',
+      title: 'Leaderboards',
+      state: 'leaderboards',
       roles: ['*']
     });
 
