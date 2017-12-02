@@ -40,6 +40,23 @@ Christine Li-
 - Added little icons in the top navbar
 - put more functions in the new site-wide footer
 
+__Screenshots:__
+
+Home page:
+![itr3_home](/screenshots/iteration3/itr3_home.png)
+
+GameSelect page:
+![it3_games](/screenshots/iteration3/itr3_games.png)
+
+Leaderboard page:
+![it3_leaderboard](/screenshots/iteration3/it3_leaderboard.png)
+
+Pong game:
+![it3_Pong](/screenshots/iteration3/it3_Pong.png)
+
+Snake game:
+![it3_snake](/screenshots/iteration3/it3_snake.png)
+
 
 
 ## Iteration 2.0
