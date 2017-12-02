@@ -6,6 +6,37 @@
 
 
 
+## Iteration 3.0
+
+__Goal:__ To have all pages up and running with basic functionality implemented. Games should be playable, even if still broken.
+
+__Group Contribution Breakdown:__
+
+Angela Fisher-
+- added correct routes for every view, so all pages accessible by url
+  - game selection page (no button yet): /games
+  - snake game (no button yet): /games/snake
+  - pong game (no button yet): /games/pong
+- created initial site-wide footer (working w/ Tony to fix)
+- migrated old home page to be the game selection page
+- created final home page, still a WIP!!
+- fixed issue with jQuery not loading
+- deleted last traces of unneeded modules
+
+Kendall Aresu-
+- placeholder
+
+Daniel York-
+- placeholder
+
+Jordan Pearson-
+- placeholder
+
+Christine Li-
+- placeholer
+
+
+
 ## Iteration 2.0
 
 __Goal:__ To set up the shell of our site, getting the foundations of the needed modules and the basic versions of the pages up and running.
@@ -43,6 +74,7 @@ Settings page:
 
 Leaderboards page:
 ![it1_leaderboards](/screenshots/iteration1/it1_leaderboards.png)
+
 
 
 ## Iteration 1.0

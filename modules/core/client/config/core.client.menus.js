@@ -26,7 +26,7 @@
     });
 
     menuService.addMenuItem('topbar', {
-      title: 'Setting',
+      title: 'Settings',
       state: 'setting',
       roles: ['*']
     });
