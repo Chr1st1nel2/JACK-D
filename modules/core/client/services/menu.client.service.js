@@ -125,6 +125,11 @@
       addMenu('topbar', {
         roles: ['*']
       });
+
+      // Adding the botbar menu
+      addMenu('botbar', {
+        roles: ['*']
+      });
     }
 
     // Remove existing menu object by menu id

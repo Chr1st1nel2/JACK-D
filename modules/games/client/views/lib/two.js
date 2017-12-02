@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 /**
  * two.js
  * a two-dimensional drawing api meant for modern browsers. It is renderer
@@ -8109,7 +8111,7 @@
     var theta = PI, x, y, lx, ly, rx, ry;
 
     points.push(
-      new Two.Anchor( 
+      new Two.Anchor(
         sin(theta) * (r + (amplitude/2)),
         cos(theta) * (r + (amplitude/2)),
         0,0,0,0,
