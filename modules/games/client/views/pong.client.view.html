@@ -1,9 +1,7 @@
-// This will be the game page for Pong
-
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="../lib-js/two.js"></script>
+    <script src="lib/two.js"></script>
     <meta charset="utf-8" />
     <title>Gamedev Canvas Workshop</title>
     <style>
@@ -17,7 +15,8 @@
         <text x="0" y="15" fill="red"><font id='player1Score'size="200"></font></text>
     </svg>
 
-<canvas id="myCanvas" width="480" height="320"></canvas>
+    <h1 style="postion:absolute;left:30px;top:80px;">Score 1:<span id="score1">0</span></h1>
+    <h1 style="position.absolute;right:30px;top:80px;">Score 2:<span id="score2">0</span></h1>
 
 <div id='draw-shapes'>
 </div>
@@ -30,6 +29,8 @@ var PADDLE_HEIGHT = 100;
 var PADDLE_WIDTH = 20;
 var BALL_SIZE = 12;
 
+var score1;
+var score2;
 
 var PADDLE1_XPOS = 50;
 var PADDLE2_XPOS = 500;
@@ -38,16 +39,16 @@ var params = { width: 600, height: 400 };
 var two = new Two(params).appendTo(elem);
 
 var makeBar = function(player1Y, player2Y){
-var player1 = two.makeRectangle(50, player1Y, PADDLE_WIDTH, PADDLE_HEIGHT);
-player1.fill = 'rgb(43, 209, 255)';
-player1.opacity = 0.75;
-player1.stroke = 'rgb(0, 0, 150)'; // Accepts all valid css color
-player1.linewidth = 5;
-var player2 = two.makeRectangle(500, player2Y, PADDLE_WIDTH, PADDLE_HEIGHT);
-player2.fill = 'rgb(255, 61, 61)';
-player2.opacity = 0.75;
-player2.stroke = 'rgb(150, 0, 0)'; // Accepts all valid css color
-player2.linewidth = 5;
+  var player1 = two.makeRectangle(50, player1Y, PADDLE_WIDTH, PADDLE_HEIGHT);
+  player1.fill = 'rgb(43, 209, 255)';
+  player1.opacity = 0.75;
+  player1.stroke = 'rgb(0, 0, 150)'; // Accepts all valid css color
+  player1.linewidth = 5;
+  var player2 = two.makeRectangle(500, player2Y, PADDLE_WIDTH, PADDLE_HEIGHT);
+  player2.fill = 'rgb(255, 61, 61)';
+  player2.opacity = 0.75;
+  player2.stroke = 'rgb(150, 0, 0)'; // Accepts all valid css color
+  player2.linewidth = 5;
 }
 
 //should rename to paddl#Y
@@ -59,8 +60,20 @@ var SPEED = 3;
 var ballX = 100;
 var ballY = PADDLE_HEIGHT + 52  ;
 
-var ballVelX = SPEED;
-var ballVelY = SPEED;
+var coinFlipX = Math.floor(Math.random() * 2);
+var coinFlipY = Math.floor(Math.random() * 2);
+  if (coinFlipX) {
+    ballVelX = SPEED;
+  }
+  else{
+    ballVelX = -SPEED;
+  }
+  if (coinFlipY) {
+    ballVelY = SPEED;
+  }
+  else{
+    ballVelY = -SPEED;
+  }
 
 
 var W = 87;
@@ -76,13 +89,13 @@ var DOWN = 40;
 
 var circle;
 var drawBall = function(color){
-circle = two.makeCircle(ballX, ballY, BALL_SIZE);
+  circle = two.makeCircle(ballX, ballY, BALL_SIZE);
 
-// The object returned has many stylable properties:
-circle.fill = '#FF8000';
+  // The object returned has many stylable properties:
+  circle.fill = '#FF8000';
 
-circle.stroke = 'orangered'; // Accepts all valid css color
-circle.linewidth = 5;
+  circle.stroke = 'orangered'; // Accepts all valid css color
+  circle.linewidth = 5;
 }
 
 
@@ -91,11 +104,11 @@ two.update();
 
 var drawFrame = function(){
 
-var frameRect = two.makeRectangle(CANVAS_WIDTH/2, CANVAS_HEIGHT/2, CANVAS_WIDTH, CANVAS_HEIGHT);
+  var frameRect = two.makeRectangle(CANVAS_WIDTH/2, CANVAS_HEIGHT/2, CANVAS_WIDTH, CANVAS_HEIGHT);
 
-frameRect.stroke = 'black';
-frameRect.linewidth = 10;
-// frameRect.opacity = 0.25;
+  frameRect.stroke = 'black';
+  frameRect.linewidth = 10;
+  // frameRect.opacity = 0.25;
 
 
 }
@@ -105,31 +118,31 @@ var leftActiveCollision = false;
 
 var ballStateUpdate = function() {
 
-var ballRight = ballX + BALL_SIZE/2;
-var ballLeft = ballX - BALL_SIZE/2;
+  var ballRight = ballX + BALL_SIZE/2;
+  var ballLeft = ballX - BALL_SIZE/2;
 
 var offset = 50;
 
-var ballTop =    ballY - BALL_SIZE/2;
-var ballBottom = offset + ballY + BALL_SIZE/2;
+  var ballTop =    ballY - BALL_SIZE/2;
+  var ballBottom = offset + ballY + BALL_SIZE/2;
 
 //TODO preform collision check
 
 
 if( ballRight > PADDLE2_XPOS - 15 ){
 
-//TODO end round in favor of P1;
-// System.exit
-throw new Error("PLAYER 1 Won round!");
-
+  //TODO end round in favor of P1;
+  // System.exit
+  throw new Error("PLAYER 1 Won round!");
+  score1++;
 
 }
 
 if( ballLeft < PADDLE1_XPOS - 20  ){
 
-//TODO end round in favor of P2;
-throw new Error("PLAYER 2  Won round!");
-
+  //TODO end round in favor of P2;
+  throw new Error("PLAYER 2  Won round!");
+  score2++;
 }
 
 // console.log("ballBottom: " + ballBottom + "; paddle Top: "+ player2Y + "P2 Y collision: " + ( (ballBottom > player2Y ) && (ballTop < (player2Y + PADDLE_HEIGHT- 55)) ) );
@@ -148,8 +161,8 @@ clear = true;
 console.log("Right paddle collision");
 
 }else if(ballRight < PADDLE2_XPOS -21 && rightActiveCollision){
-rightActiveCollision = false;
-clear = false;
+  rightActiveCollision = false;
+  clear = false;
 
 }
 
@@ -163,9 +176,9 @@ clear = true;
 console.log("Left paddle collision");
 
 }else if(ballLeft > (PADDLE1_XPOS + PADDLE_WIDTH  + 1)  && leftActiveCollision){
-leftActiveCollision = false;
-clear = false;
-console.log("Left paddle collision recoil");
+  leftActiveCollision = false;
+  clear = false;
+  console.log("Left paddle collision recoil");
 
 }
 
@@ -175,14 +188,14 @@ console.log("Left paddle collision recoil");
 if(ballTop <= 15){
 
 //TODO: invert y velocity
-ballVelY = -ballVelY;
+  ballVelY = -ballVelY;
 
 }
 
 if(ballBottom >= CANVAS_HEIGHT+30){
 
 //TODO: invert y velocity
-ballVelY = -ballVelY;
+  ballVelY = -ballVelY;
 
 }
 
@@ -192,12 +205,13 @@ ballY += ballVelY;
 
 }
 
+
 var keyState = {};
 window.addEventListener('keydown',function(e){
-  keyState[e.keyCode || e.which] = true;
+    keyState[e.keyCode || e.which] = true;
 },true);
 window.addEventListener('keyup',function(e){
-  keyState[e.keyCode || e.which] = false;
+    keyState[e.keyCode || e.which] = false;
 },true);
 
 // x = 100;
@@ -206,41 +220,45 @@ var clear = true;
 var gameLoop =  function() {
 
 if(clear){
-two.clear();
-drawFrame();
+  two.clear();
+  drawFrame();
 
 }
-  if (keyState[W] && player1Y > 55){
-    player1Y = player1Y - SPEED;
-  }
-  if (keyState[S] && player1Y+PADDLE_HEIGHT < CANVAS_HEIGHT+45){
-    player1Y = player1Y + SPEED;
+    if (keyState[W] && player1Y > 55){
+      player1Y = player1Y - SPEED;
+    }
+    if (keyState[S] && player1Y+PADDLE_HEIGHT < CANVAS_HEIGHT+45){
+      player1Y = player1Y + SPEED;
 
-  }
+    }
 
-  if(keyState[UP] && player2Y > 55){
-    player2Y = player2Y - SPEED;
-  }
-  if(keyState[DOWN] && player2Y+PADDLE_HEIGHT < CANVAS_HEIGHT+45){
-    player2Y = player2Y + SPEED;
-  }
-
-
-  makeBar(player1Y, player2Y);
-
-  ballStateUpdate();
+    if(keyState[UP] && player2Y > 55){
+      player2Y = player2Y - SPEED;
+    }
+    if(keyState[DOWN] && player2Y+PADDLE_HEIGHT < CANVAS_HEIGHT+45){
+      player2Y = player2Y + SPEED;
+    }
 
 
-  drawBall();
+    makeBar(player1Y, player2Y);
 
-  // redraw/reposition your object here
-  // also redraw/animate any objects not controlled by the user
-  two.update();
+    ballStateUpdate();
 
-  setTimeout(gameLoop, 10);
+
+    drawBall();
+
+
+
+
+    // redraw/reposition your object here
+    // also redraw/animate any objects not controlled by the user
+    two.update();
+
+    setTimeout(gameLoop, 10);
 }
 gameLoop();
 two.update();
+
 
 </script>
 
