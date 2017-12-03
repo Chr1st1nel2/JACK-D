@@ -33,6 +33,11 @@
 angular.module('ngSnake', [])
 
   .controller('snakeCtrl', function($scope, $timeout, $window) {
+    var self = $scope;
+            self.spokes = 1;
+            self.two = new Two({
+                type: Two.Types.svg
+            }).appendTo(document.getElementById('gameContainer'));
     var elem = document.getElementById('gameContainer');
     var BOARD_SIZE = 20;
     var CANVAS_HEIGHT = 400;
@@ -43,8 +48,6 @@ angular.module('ngSnake', [])
 
     var params = { width: 600, height: 400 };
 
-    var two = new Two(params).appendTo(elem);
-
     var DIRECTIONS = {
       LEFT: 65,
       UP: 87,
@@ -52,20 +55,20 @@ angular.module('ngSnake', [])
       DOWN: 83
     };
 
-    two.update();
+    self.two.update();
 
    var drawFrame = function(){
-     var frameRect = two.makeRectangle(CANVAS_WIDTH/2, CANVAS_HEIGHT/2, CANVAS_WIDTH, CANVAS_HEIGHT);
-
+     var frameRect = self.two.makeRectangle(CANVAS_WIDTH/2, CANVAS_HEIGHT/2, CANVAS_WIDTH, CANVAS_HEIGHT);
      frameRect.stroke = 'black';
      frameRect.linewidth = 10;
+     console.log("draw frame");
      // frameRect.opacity = 0.25;
    }
 
     var makeHead = function(col, row){
       col = col*10;
       row = row*10;
-      var newHead = two.makeRectangle(col, row, PIECE_WIDTH, PIECE_HEIGHT);
+      var newHead = self.two.makeRectangle(col, row, PIECE_WIDTH, PIECE_HEIGHT);
       newHead.fill = 'rgb(43, 209, 100)';
       newHead.opacity = 0.75;
       newHead.stroke = 'rgb(0, 150, 0)'; // Accepts all valid css color
@@ -74,7 +77,7 @@ angular.module('ngSnake', [])
     var makeBody = function(col, row){
       col = col*10;
       row = row*10;
-      var newBody = two.makeRectangle(col, row, PIECE_WIDTH, PIECE_HEIGHT);
+      var newBody = self.two.makeRectangle(col, row, PIECE_WIDTH, PIECE_HEIGHT);
       newBody.fill = 'rgb(58, 255, 126)';
       newBody.opacity = 0.75;
       newBody.stroke = 'rgb(0, 150, 0)'; // Accepts all valid css color
@@ -120,7 +123,7 @@ angular.module('ngSnake', [])
     };
 
     function update() {
-      two.update;
+      self.two.update;
       drawFrame();
       var newHead = getNewHead();
 
