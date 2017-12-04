@@ -18,7 +18,6 @@ var _ = require('lodash'),
     }
   }),
   pngquant = require('imagemin-pngquant'),
-  wiredep = require('wiredep').stream,
   path = require('path'),
   endOfLine = require('os').EOL,
   del = require('del'),

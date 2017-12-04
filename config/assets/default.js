@@ -14,6 +14,7 @@ module.exports = {
       ],
       js: [
         // bower:js
+        'public/lib/jquery/dist/jquery.js',
         'public/lib/angular/angular.js',
         'public/lib/angular-animate/angular-animate.js',
         'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
@@ -25,6 +26,8 @@ module.exports = {
         'public/lib/jquery/dist/jquery.js',
         'public/lib/ng-file-upload/ng-file-upload.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
+        'public/lib/two/build/two.js',
+        'public/lib/KeyboardState.js',
         // endbower
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
