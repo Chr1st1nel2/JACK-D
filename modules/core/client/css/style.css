@@ -206,12 +206,12 @@ main[role="main-home-wrapper"] article[role="pge-title-content"] p,main[role="ma
 }
 
 #top-container nav > ul > li:hover > a {
-	border-bottom: 6px solid white;
+	border-bottom: 6px solid #fb5353;
 	background-color: transparent !important;
 }
 
 #top-container nav > ul > li.active > a {
-	border-bottom: 6px solid white;
+	border-bottom: 6px solid #fb5353;
 }
 
 #bottom-container ul > li > a {
@@ -239,7 +239,8 @@ main[role="main-home-wrapper"] article[role="pge-title-content"] p,main[role="ma
 }
 
 #top-container{
-	background-color: rgba(237, 88, 88, 0.9);
+	/*background-color: rgba(237, 88, 88, 0.9);*/
+	background-color: rgba(255, 255, 255, 0);
 }
 
 /*===== footer ===*/
