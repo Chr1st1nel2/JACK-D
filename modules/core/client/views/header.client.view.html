@@ -1,8 +1,12 @@
 <div class="nav-style">
   <div class="container" id="top-container" ng-controller="HeaderController as vm">
-    <a ui-sref="home" class="navbar-brand">JACK'D</a>
     <!-- Buttons on the left hand side of the header -->
     <nav class="navbar-collapse" uib-collapse="!vm.isCollapsed" role="navigation">
+      <ul class="nav navbar-nav">
+        <li ui-sref-active="active">
+          <a ui-sref="home" id="logo">JACK'D</a>
+        </li>
+      </ul>
       <ul class="nav navbar-nav" ng-if="vm.menu.shouldRender(vm.authentication.user);">
         <li ng-repeat="item in vm.menu.items | orderBy: 'position'" ng-if="item.shouldRender(vm.authentication.user);" ng-switch="item.type" ng-class="{ dropdown: item.type === 'dropdown' }" ui-sref-active="active" class="{{item.class}}" uib-dropdown="item.type === 'dropdown'">
           <a ng-switch-when="dropdown" class="dropdown-toggle" uib-dropdown-toggle role="button">{{::item.title}}&nbsp;<span class="caret"></span></a>

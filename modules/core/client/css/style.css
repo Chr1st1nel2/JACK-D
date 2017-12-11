@@ -197,9 +197,12 @@ main[role="main-home-wrapper"] article[role="pge-title-content"] p,main[role="ma
 }
 
 /* footer */
-
-#top-container nav > ul > li > a {
+#top-container a, nav > ul > li > a {
 	color: white;
+}
+
+#logo {
+	font-size: 18px;
 }
 
 #top-container nav > ul > li:hover > a {
@@ -209,7 +212,6 @@ main[role="main-home-wrapper"] article[role="pge-title-content"] p,main[role="ma
 
 #top-container nav > ul > li.active > a {
 	border-bottom: 6px solid white;
-	background-color: rgba(237, 88, 88, 0.3);
 }
 
 #bottom-container ul > li > a {
