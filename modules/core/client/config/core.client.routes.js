@@ -69,6 +69,12 @@
         controller: 'HomeController',
         controllerAs: 'vm'
       })
+      .state('flyingBox', {
+        url: '/games/flyingBox',
+        templateUrl: '/modules/games/client/views/flyingBox.client.view.html',
+        controller: 'HomeController',
+        controllerAs: 'vm'
+      })
       .state('not-found', {
         url: '/not-found',
         templateUrl: '/modules/core/client/views/404.client.view.html',

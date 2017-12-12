@@ -293,6 +293,10 @@ main[role="main-inner-wrapper"] .thumbnails-pan section figure:hover img,section
 
 main[role="main-inner-wrapper"] .thumbnails-pan section figure:hover figcaption{ bottom:0;}
 
+/*===== Setting ===*/
+
+main[role="main-inner-wrapper"] article[role="pge-title-content"] {padding-bottom: 0}
+
 /*
  * Start Bootstrap - Full (http://startbootstrap.com/)
  * Copyright 2013-2016 Start Bootstrap
