@@ -338,11 +338,11 @@ div.homepage {
 
 #homepageBody {
 
-	position:fixed;
+	position: fixed;
 	top: 50%;
 	left: 50%;
-	width:15em;
-	height:5em;
+	width: 15em;
+	height: 5em;
 	margin-top: -2em; /*set to a negative number 1/2 of your height*/
 	margin-left: -7em; /*set to a negative number 1/2 of your width*/
 	border: 1px solid #ccc;
@@ -354,6 +354,5 @@ div.homepage {
 	text-align: center;
 	vertical-align: middle;
 	line-height: 5em;
-
 
 }
