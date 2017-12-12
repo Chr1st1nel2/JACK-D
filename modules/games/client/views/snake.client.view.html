@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app='ngSnake'>
 <head>
-  <link rel="stylesheet" type="text/css" href="snake.css">
+  <link rel="stylesheet" type="text/css" href="../css/snake.css">
     <script src="lib/two.js"></script>
     <script src="lib/KeyboardState.js"></script>
     <meta charset="utf-8" />
@@ -33,63 +33,21 @@
 angular.module('ngSnake', [])
 
   .controller('snakeCtrl', function($scope, $timeout, $window) {
-    var self = $scope;
-            self.spokes = 1;
-            self.two = new Two({
-                type: Two.Types.svg
-            }).appendTo(document.getElementById('gameContainer'));
-    var elem = document.getElementById('gameContainer');
     var BOARD_SIZE = 20;
-    var CANVAS_HEIGHT = 400;
-    var CANVAS_WIDTH = 600;
-    var PIECE_WIDTH = 10;
-    var PIECE_HEIGHT = 10;
-    var keyboard = new KeyboardState();
-
-    var params = { width: 600, height: 400 };
 
     var DIRECTIONS = {
-      LEFT: 65,
-      UP: 87,
-      RIGHT: 68,
-      DOWN: 83
+      LEFT: 37,
+      UP: 38,
+      RIGHT: 39,
+      DOWN: 40
     };
-
-    self.two.update();
-
-   var drawFrame = function(){
-     var frameRect = self.two.makeRectangle(CANVAS_WIDTH/2, CANVAS_HEIGHT/2, CANVAS_WIDTH, CANVAS_HEIGHT);
-     frameRect.stroke = 'black';
-     frameRect.linewidth = 10;
-     console.log("draw frame");
-     // frameRect.opacity = 0.25;
-   }
-
-    var makeHead = function(col, row){
-      col = col*10;
-      row = row*10;
-      var newHead = self.two.makeRectangle(col, row, PIECE_WIDTH, PIECE_HEIGHT);
-      newHead.fill = 'rgb(43, 209, 100)';
-      newHead.opacity = 0.75;
-      newHead.stroke = 'rgb(0, 150, 0)'; // Accepts all valid css color
-      newHead.linewidth = 4;
-    }
-    var makeBody = function(col, row){
-      col = col*10;
-      row = row*10;
-      var newBody = self.two.makeRectangle(col, row, PIECE_WIDTH, PIECE_HEIGHT);
-      newBody.fill = 'rgb(58, 255, 126)';
-      newBody.opacity = 0.75;
-      newBody.stroke = 'rgb(0, 150, 0)'; // Accepts all valid css color
-      newBody.linewidth = 4;
-    }
 
     var COLORS = {
       GAME_OVER: '#820303',
       FRUIT: '#E80505',
-      SNAKE_HEAD: makeHead,
+      SNAKE_HEAD: '#078F00',
       SNAKE_BODY: '#0DFF00',
-      BOARD: '#fff'
+      BOARD: '#000'
     };
 
     var snake = {
@@ -115,16 +73,14 @@ angular.module('ngSnake', [])
       } else if (fruit.x == row && fruit.y == col) {
         return COLORS.FRUIT;
       } else if (snake.parts[0].x == row && snake.parts[0].y == col) {
-        makeHead(col, row);
+        return COLORS.SNAKE_HEAD;
       } else if ($scope.board[col][row] === true) {
-        makeBody(col, row);
+        return COLORS.SNAKE_BODY;
       }
       return COLORS.BOARD;
     };
 
     function update() {
-      self.two.update;
-      drawFrame();
       var newHead = getNewHead();
 
       if (boardCollision(newHead) || selfCollision(newHead)) {
