@@ -69,9 +69,9 @@
         controller: 'HomeController',
         controllerAs: 'vm'
       })
-      .state('flyingBox', {
-        url: '/games/flyingBox',
-        templateUrl: '/modules/games/client/views/flyingBox.client.view.html',
+      .state('flappyBox', {
+        url: '/games/flappyBox',
+        templateUrl: '/modules/games/client/views/flappyBox.client.view.html',
         controller: 'HomeController',
         controllerAs: 'vm'
       })
