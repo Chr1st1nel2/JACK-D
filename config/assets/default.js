@@ -25,6 +25,7 @@ module.exports = {
         'public/lib/jquery/dist/jquery.js',
         'public/lib/ng-file-upload/ng-file-upload.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
+        'public/lib/two/two.js'
         // endbower
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
