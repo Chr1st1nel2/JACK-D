@@ -75,6 +75,12 @@
         controller: 'HomeController',
         controllerAs: 'vm'
       })
+      .state('whiteface', {
+        url: '/games/whiteface',
+        templateUrl: '/modules/games/client/views/whiteface.client.view.html',
+        controller: 'HomeController',
+        controllerAs: 'vm'
+      })
       .state('not-found', {
         url: '/not-found',
         templateUrl: '/modules/core/client/views/404.client.view.html',
