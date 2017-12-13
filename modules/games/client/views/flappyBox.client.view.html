@@ -9,13 +9,20 @@
   </style>
   <p style="padding-top:40px;"></p>
   <br>
+  <script src="../../../../public/lib/two/build/two.js" type="text/javascript"></script>
+  <div id='draw-shapes'></div>
   <button id="start" onclick="startGame()" style="width:100px;background-color:#fb5353;color:white;"> START </button>
   <button id="move" onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)" style="width:100px;background-color:#fb5353;color:white;"> ACCELERATE </button>
   <button id="restart" onclick="handler()" style="width:100px;background-color:#fb5353;color:white;"> OK </button>
   <script>
+
+  var elem = document.getElementById('draw-shapes');
+  var params = { width: 480, height: 270 };
+  var two = new Two(params).appendTo(elem);
+
     //window.onload = startGame();
     console.log("running");
-    var myGamePiece;
+    var myGamePiece, myTest;
     var myObstacles = [];
     var myScore;
     document.getElementById("start").style.display = "block";
@@ -23,6 +30,7 @@
     document.getElementById("move").style.display = "none";
 
     function startGame() {
+      myTest = two.makeRectangle(50, 50, 50, 50);
       console.log("start");
       document.getElementById("start").style.display = "none";
       document.getElementById("restart").style.display = "none";
@@ -49,6 +57,13 @@
     }
 
     function component(width, height, color, x, y, type) {
+      if (color === "red"){
+        myGamePiece = two.makeRectangle(this.x, this.y, 30, 30)
+        myGamePiece.fill = 'rgb(43, 209, 255)';
+        myGamePiece.opacity = 0.75;
+        myGamePiece.stroke = 'rgb(0, 0, 150)'; // Accepts all valid css color
+        myGamePiece.linewidth = 5;
+      }
       this.type = type;
       this.score = 0;
       this.width = width;
@@ -101,6 +116,8 @@
     }
 
     function updateGameArea() {
+      two.update();
+      myTest = two.makeRectangle(100, 100, 50, 50);
       var x, height, gap, minHeight, maxHeight, minGap, maxGap;
       for (i = 0; i < myObstacles.length; i += 1) {
         if (myGamePiece.crashWith(myObstacles[i])) {
