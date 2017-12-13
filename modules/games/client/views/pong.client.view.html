@@ -41,7 +41,10 @@ var addScore = function(player){
   console.log("Score 1: " + score1);
   console.log("Score 2: " + score2);
   reset();
+  document.getElementById("score1").innerHTML = score1.toString();
+  document.getElementById("score2").innerHTML = score2.toString();
 }
+
 
 var reset = function(){
   drawFrame();
