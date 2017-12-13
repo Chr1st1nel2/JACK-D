@@ -3,9 +3,21 @@
     position: fixed;
   }
 }
+
+h3 {
+  padding-top: 20px;
+  color: white;
+  padding-bottom: 20px;
+}
+
+label {
+  color: white;
+}
+
 .social-account-container {
   display: inline-block;
   position: relative;
+  background-color: white;
 }
 .btn-add-remove-account {
   pointer-events: none;

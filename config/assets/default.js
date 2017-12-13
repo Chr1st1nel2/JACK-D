@@ -25,6 +25,8 @@ module.exports = {
         'public/lib/jquery/dist/jquery.js',
         'public/lib/ng-file-upload/ng-file-upload.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
+        'public/lib/two/build/two.js',
+        'public/lib/KeyboardState.js',
         // endbower
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
@@ -45,7 +47,8 @@ module.exports = {
       'modules/core/client/app/config.js',
       'modules/core/client/app/init.js',
       'modules/*/client/*.js',
-      'modules/*/client/**/*.js'
+      'modules/*/client/**/*.js',
+      'public/lib/two/build/two.js'
     ],
     img: [
       'modules/**/*/img/**/*.jpg',

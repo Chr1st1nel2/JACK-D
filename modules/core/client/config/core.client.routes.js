@@ -69,6 +69,12 @@
         controller: 'HomeController',
         controllerAs: 'vm'
       })
+      .state('flappyBox', {
+        url: '/games/flappyBox',
+        templateUrl: '/modules/games/client/views/flappyBox.client.view.html',
+        controller: 'HomeController',
+        controllerAs: 'vm'
+      })
       .state('not-found', {
         url: '/not-found',
         templateUrl: '/modules/core/client/views/404.client.view.html',
