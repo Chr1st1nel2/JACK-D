@@ -9,6 +9,7 @@
 __Goal:__ To have the site completely finished with all the proper functionality.
 
 __Group Contribution Breakdown:__
+
 Angela Fisher- placeholder
 
 Kendall Aresu-

@@ -3,7 +3,7 @@
 <head>
   <link rel="stylesheet" type="text/css" href="../css/snake.css">
     <script src="../../../../public/lib/two/build/two.js"></script>
-    <!--<script src="lib/KeyboardState.js"></script>-->
+    <script src="KeyboardState.js"></script>
     <meta charset="utf-8" />
     <style>
     	* { padding: 0; margin: 0; }
@@ -40,12 +40,17 @@
 angular.module('ngSnake', [])
 
   .controller('snakeCtrl', function($scope, $timeout, $window) {
-    var elem = document.getElementById('draw-shapes');
-    var params = {};
-    var two = new Two(params).appendTo(elem);
-    
+    var elem = document.getElementById('gameContainer');
     var BOARD_SIZE = 20;
+    var CANVAS_HEIGHT = 400;
+    var CANVAS_WIDTH = 600;
+    var PIECE_WIDTH = 10;
+    var PIECE_HEIGHT = 10;
+    var keyboard = new KeyboardState();
 
+    var params = { width: 600, height: 400 };
+
+    var two = new Two(params).appendTo(elem);
 
     var DIRECTIONS = {
       LEFT: 37,
@@ -53,6 +58,36 @@ angular.module('ngSnake', [])
       RIGHT: 39,
       DOWN: 40
     };
+
+    two.update();
+
+    var drawFrame = function(){
+      var frameRect = two.makeRectangle(CANVAS_WIDTH/2, CANVAS_HEIGHT/2, CANVAS_WIDTH, CANVAS_HEIGHT);
+
+      frameRect.stroke = 'black';
+      frameRect.opacity = 0.75;
+      frameRect.linewidth = 10;
+    }
+
+    var makeHead = function(col, row){
+      col = col*10;
+      row = row*10;
+      var newHead = two.makeRectangle(col, row, PIECE_WIDTH, PIECE_HEIGHT);
+      newHead.fill= 'rgd(43,209,100)';
+      newHead.opacity = 0.75;
+      newHead.stroke = 'rgd(0, 150, 0)';
+      newHead.linewidth = 4;
+    }
+
+    var makeBody = function(col, row){
+      col = col*10;
+      row = row*10;
+      var newBody = two.makeRectangle(col, row, PIECE_WIDTH, PIECE_HEIGHT);
+      newBody.fill = 'rgb(58, 255, 126)';
+      newBody.opacity = 0.75;
+      newBody.stroke = 'rgb(0, 150, 0)';
+      newBody.linewidth = 4;
+    }
 
     var COLORS = {
       GAME_OVER: '#820303',
@@ -93,6 +128,8 @@ angular.module('ngSnake', [])
     };
 
     function update() {
+      two.update;
+      drawFrame();
       var newHead = getNewHead();
 
       if (boardCollision(newHead) || selfCollision(newHead)) {
