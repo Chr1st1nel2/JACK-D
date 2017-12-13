@@ -48,7 +48,6 @@ module.exports = {
       'modules/core/client/app/init.js',
       'modules/*/client/*.js',
       'modules/*/client/**/*.js',
-      'public/lib/two/build/two.js'
     ],
     img: [
       'modules/**/*/img/**/*.jpg',
