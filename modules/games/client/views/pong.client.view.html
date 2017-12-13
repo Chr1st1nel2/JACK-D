@@ -2,6 +2,7 @@
 <html>
 <head>
   <script src="../../../../public/lib/two/build/two.js"></script>
+  <script src="../../../../public/lib/KeyboardState.js"></script>
   <meta charset="utf-8" />
   <style>
   	* { padding: 0; margin: 0; }
@@ -32,8 +33,15 @@ var PADDLE_HEIGHT = 100;
 var PADDLE_WIDTH = 20;
 var BALL_SIZE = 12;
 
+var keyboard = new KeyboardState();
+
 var score1 = 0;
 var score2 = 0;
+
+var P1up = false;
+var P1down = false;
+var P2up = false;
+var P2down = false;
 
 var PADDLE1_XPOS = 50;
 var PADDLE2_XPOS = 500;
@@ -54,11 +62,12 @@ var addScore = function(player){
 
 var reset = function(){
   drawFrame();
+  BALLSPEED = 2;
   makeBar(200, 200);
   ballX = 250;
   ballY = PADDLE_HEIGHT + 52;
-  ballVelX = SPEED;
-  ballVelY = SPEED;
+  ballVelX = BALLSPEED;
+  ballVelY = BALLSPEED*1.5;
   ballRand();
   drawBall();
 }
@@ -79,28 +88,29 @@ var makeBar = function(player1Y, player2Y){
 //should rename to paddl#Y
 var player1Y = 200;
 var player2Y = 200;
-var SPEED = 3;
+var BALLSPEED = 2;
+var PLAYERSPEED = 3;
 
 
 var ballX = 250;
 var ballY = PADDLE_HEIGHT + 52  ;
-var ballVelX = SPEED;
-var ballVelY = SPEED/2;
+var ballVelX = BALLSPEED;
+var ballVelY = BALLSPEED*1.5;
 
 var ballRand = function(){
   var coinFlipX = Math.floor(Math.random() * 2);
   var coinFlipY = Math.floor(Math.random() * 2);
     if (coinFlipX) {
-      ballVelX = SPEED;
+      ballVelX = BALLSPEED;
     }
     else{
-      ballVelX = -SPEED;
+      ballVelX = -BALLSPEED;
     }
     if (coinFlipY) {
-      ballVelY = SPEED/2;
+      ballVelY = BALLSPEED*1.5;
     }
     else{
-      ballVelY = -SPEED/2;
+      ballVelY = -BALLSPEED*1.5;
     }
 }
 
@@ -179,6 +189,13 @@ ballVelX *= 1.2;
 ballVelY *= 1.2;
 ballVelX = -ballVelX;
 rightActiveCollision = true;
+if (P2up && P2down === false){
+  ballVelY -= 1;
+}
+else if (P2down && P2up === false){
+  ballVelY += 1;
+}
+
 console.log("Right paddle collision");
 
 }else if(ballRight < PADDLE2_XPOS -21 && rightActiveCollision){
@@ -192,11 +209,19 @@ if(ballLeft < (PADDLE1_XPOS + PADDLE_WIDTH  + 0)    && ( (ballBottom > player1Y 
 //TODO  Left paddle collision – invert direction of ball
 ballVelX = -ballVelX;
 leftActiveCollision = true;
+if (P1up && P1down === false){
+  ballVelY -= 2;
+  ballVelX += 0.5;
+}
+else if (P1down && P1up === false){
+  ballVelY += 2;
+  ballVelX -= 0.5;
+}
+
 console.log("Left paddle collision");
 
 }else if(ballLeft > (PADDLE1_XPOS + PADDLE_WIDTH  + 1)  && leftActiveCollision){
   leftActiveCollision = false;
-  console.log("Left paddle collision recoil");
 
 }
 
@@ -223,33 +248,32 @@ ballY += ballVelY;
 
 }
 
-
-var keyState = {};
-window.addEventListener('keydown',function(e){
-    keyState[e.keyCode || e.which] = true;
-},true);
-window.addEventListener('keyup',function(e){
-    keyState[e.keyCode || e.which] = false;
-},true);
-
 var gameLoop =  function() {
 
+  keyboard.update();
   two.clear();
   drawFrame();
 
-    if (keyState[W] && player1Y > 55){
-      player1Y = player1Y - SPEED;
+    if (keyboard.pressed("W") && player1Y > 55){
+      P1up = true;
+      P1down = false;
+      player1Y = player1Y - PLAYERSPEED;
     }
-    if (keyState[S] && player1Y+PADDLE_HEIGHT < CANVAS_HEIGHT+45){
-      player1Y = player1Y + SPEED;
+    if (keyboard.pressed("S") && player1Y+PADDLE_HEIGHT < CANVAS_HEIGHT+45){
+      player1Y = player1Y + PLAYERSPEED;
+      P1up = false;
+      P1down = true;
+    }
 
+    if(keyboard.pressed("up") && player2Y > 55){
+      player2Y = player2Y - PLAYERSPEED;
+      P2up = true;
+      P2down = false;
     }
-
-    if(keyState[UP] && player2Y > 55){
-      player2Y = player2Y - SPEED;
-    }
-    if(keyState[DOWN] && player2Y+PADDLE_HEIGHT < CANVAS_HEIGHT+45){
-      player2Y = player2Y + SPEED;
+    if(keyboard.pressed("down") && player2Y+PADDLE_HEIGHT < CANVAS_HEIGHT+45){
+      player2Y = player2Y + PLAYERSPEED;
+      P2up = false;
+      P2down = true;
     }
 
 
