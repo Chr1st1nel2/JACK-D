@@ -14,15 +14,29 @@ Angela Fisher- placeholder
 Kendall Aresu-
 - finalized the scoring functionality of pong
 - fixed the flickering when pong was reset
-- cleaned up Pong
 
 Jordan Pearson- placeholder
 
 Christine Li- placeholder
 
 __Screenshots__:
+
 Home page:
 ![itr4_home](/screenshots/iteration4/itr4_home.png)
+
+Game select page:
+![itr4_games](/screenshots/iteration4/itr4_games.png)
+
+Leaderboard:
+![itr4_leaderboard](/screenshots/iteration4/itr4_leaderboard.png)
+
+Settings:
+![itr4_settings](/screenshots/iteration4/itr4_settings.png)
+
+About page:
+![itr4_about](/screenshots/iteration4/itr4_about.png)
+
+
 
 ## Iteration 3.0
 
