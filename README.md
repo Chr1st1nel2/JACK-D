@@ -2,9 +2,26 @@
 
 
 ### [Our Live Heroku App](https://mysterious-brushlands-34136.herokuapp.com)
-##### Members: Jordan Pearson, Angela Fisher, Christine Li, Kendall Aresu, and Daniel York
+##### Members: Jordan Pearson, Angela Fisher, Christine Li, and Kendall Aresu
 
+##Iteration 4.0
+__Goal:__ To have the site completely finished with all the proper functionality.
 
+__Group Contribution Breakdown:__
+Angela Fisher- placeholder
+
+Kendall Aresu-
+- finalized the scoring functionality of pong
+- fixed the flickering when pong was reset
+- cleaned up Pong
+
+Jordan Pearson- placeholder
+
+Christine Li- placeholder
+
+__Screenshots__:
+Home page:
+![itr4_home](/screenshots/iteration4/itr4_home.png)
 
 ## Iteration 3.0
 
