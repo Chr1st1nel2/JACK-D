@@ -3,7 +3,7 @@
 <head>
   <link rel="stylesheet" type="text/css" href="../css/snake.css">
     <script src="../../../../public/lib/two/build/two.js"></script>
-    <script src="lib/KeyboardState.js"></script>
+    <!--<script src="lib/KeyboardState.js"></script>-->
     <meta charset="utf-8" />
     <title>Gamedev Canvas Workshop</title>
     <style>
@@ -19,7 +19,7 @@
       <section class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
         <div id='draw-shapes'></div>
         <div id="gameContainer">
-          <h1 style="color:white">Score: {{score}}</h1>
+          <h1 style="color:#333">Score: {{score}}</h1> <!-- change color to white when inplement into the site-->
           <br>
           <div>
             <div ng-repeat="column in board">
