@@ -106,14 +106,14 @@ var audioLoader = new THREE.AudioLoader();
 				camera.add( listener );
 
 				//Load ambience
-				audioLoader.load( 'sounds/ambience.wav', function( buffer ) {
+				audioLoader.load( 'img/sounds/ambience.wav', function( buffer ) {
 					ambience.setBuffer( buffer );
 					ambience.setLoop( true );
 					ambience.setVolume( 0.5 );
 					ambience.play();
 				});
 				//Load steps
-				audioLoader.load( 'sounds/steps.wav', function( buffer ) {
+				audioLoader.load( 'img/sounds/steps.wav', function( buffer ) {
 					steps.setBuffer( buffer );
 					steps.setLoop( true );
 					steps.setVolume( 0.2 );
@@ -121,7 +121,7 @@ var audioLoader = new THREE.AudioLoader();
 					steps.pause();
 				});
 
-				audioLoader.load( 'sounds/static.mp3', function( buffer ) {
+				audioLoader.load( 'img/sounds/static.mp3', function( buffer ) {
 					statik.setBuffer( buffer );
 					statik.setLoop( true );
 					statik.setVolume( 0.2 );
@@ -129,7 +129,7 @@ var audioLoader = new THREE.AudioLoader();
 					statik.pause();
 				});
 
-				audioLoader.load( 'sounds/laugh.mp3', function( buffer ) {
+				audioLoader.load( 'img/sounds/laugh.mp3', function( buffer ) {
 					laugh.setBuffer( buffer );
 					laugh.setLoop( false );
 					laugh.setVolume( 0.6 );
@@ -165,7 +165,7 @@ var audioLoader = new THREE.AudioLoader();
 				var floorGeometry = new THREE.PlaneGeometry( 2000, 2000, 100, 100 );
 				floorGeometry.rotateX( - Math.PI / 2 );
 
-				var floorTexture = new THREE.TextureLoader().load( "textures/road.jpg" );
+				var floorTexture = new THREE.TextureLoader().load( "img/textures/road.jpg" );
 				floorTexture.wrapS = THREE.RepeatWrapping;
 				floorTexture.wrapT = THREE.RepeatWrapping;
 				floorTexture.repeat.set( 11, 11 );
@@ -177,7 +177,7 @@ var audioLoader = new THREE.AudioLoader();
 
 				//walls
 				var wallGeometry = new THREE.PlaneGeometry( 500, 500, 100, 100 );
-				var wallTexture = new THREE.TextureLoader().load( "textures/wall.jpg" );
+				var wallTexture = new THREE.TextureLoader().load( "img/textures/wall.jpg" );
 				wallTexture.wrapS = THREE.RepeatWrapping;
 				wallTexture.wrapT = THREE.RepeatWrapping;
 				wallTexture.repeat.set( 4, 4 );
@@ -223,7 +223,7 @@ var audioLoader = new THREE.AudioLoader();
 				scene.add( wall4 );
 
 				var gateGeometry = new THREE.PlaneGeometry( 60, 100, 100, 100 );
-				var gateTexture = new THREE.TextureLoader().load( "textures/Gate.jpg" );
+				var gateTexture = new THREE.TextureLoader().load( "img/textures/Gate.jpg" );
 				var gateMaterial = new THREE.MeshLambertMaterial( { map: gateTexture, side: THREE.DoubleSide, transparent: true } );
 				gate = new THREE.Mesh( gateGeometry, gateMaterial );
 				//gate.rotation.y = THREE.Math.degToRad(-90);
@@ -236,7 +236,7 @@ var audioLoader = new THREE.AudioLoader();
 				//ceiling
 
 				var ceilingGeometry = new THREE.PlaneGeometry( 2000, 2000, 100, 100 );
-				var ceilingTexture = new THREE.TextureLoader().load( "textures/ceiling.jpg" );
+				var ceilingTexture = new THREE.TextureLoader().load( "img/textures/ceiling.jpg" );
 				ceilingTexture.wrapS = THREE.RepeatWrapping;
 				ceilingTexture.wrapT = THREE.RepeatWrapping;
 				ceilingTexture.repeat.set( 11, 11 );
@@ -251,7 +251,7 @@ var audioLoader = new THREE.AudioLoader();
 
 				//pillars
 				var pillarGeometry = new THREE.BoxGeometry( 30, 80, 15 );
-				var pillarTexture = new THREE.TextureLoader().load( "textures/pillar.png" );
+				var pillarTexture = new THREE.TextureLoader().load( "img/textures/pillar.png" );
 				pillarTexture.wrapS = THREE.RepeatWrapping;
 				pillarTexture.wrapT = THREE.RepeatWrapping;
 
@@ -291,7 +291,7 @@ var audioLoader = new THREE.AudioLoader();
 
 				//arrow
 				var arrowGeometry = new THREE.PlaneGeometry( 20, 20, 100, 100 );
-				var arrowTexture = new THREE.TextureLoader().load( "textures/arrow.png" );
+				var arrowTexture = new THREE.TextureLoader().load( "img/textures/arrow.png" );
 				var arrowMaterial = new THREE.MeshLambertMaterial( { map: arrowTexture, side: THREE.DoubleSide, transparent: true } );
 				var arrow1 = new THREE.Mesh( arrowGeometry, arrowMaterial );
 				arrow1.rotation.x = THREE.Math.degToRad(-90);
@@ -303,7 +303,7 @@ var audioLoader = new THREE.AudioLoader();
 
 				scene.add( arrow1 );
 
-				var spriteMap = new THREE.TextureLoader().load( "textures/White_Face.png" );
+				var spriteMap = new THREE.TextureLoader().load( "img/textures/White_Face.png" );
 				var spriteMaterial = new THREE.SpriteMaterial( { map: spriteMap, fog: true, side: THREE.DoubleSide, transparent: true,  } );
 				whiteFace = new THREE.Sprite( spriteMaterial );
 				whiteFace.scale.y = 20;
@@ -314,7 +314,7 @@ var audioLoader = new THREE.AudioLoader();
 				whiteFace.position.z = 100;
 				scene.add( whiteFace );
 
-				spriteMap = new THREE.TextureLoader().load( "textures/key.png" );
+				spriteMap = new THREE.TextureLoader().load( "img/textures/key.png" );
 				spriteMaterial = new THREE.SpriteMaterial( { map: spriteMap, fog: true, side: THREE.DoubleSide, transparent: true,  } );
 				key1 = new THREE.Sprite( spriteMaterial );
 				key1.scale.y = 5;
@@ -361,12 +361,12 @@ var audioLoader = new THREE.AudioLoader();
 
 	var carobjLoader = new THREE.OBJLoader( manager );
 	var mtlLoader = new THREE.MTLLoader();
-	mtlLoader.setPath( 'objects/' );
+	mtlLoader.setPath( 'img/objects/' );
 		mtlLoader.load( 'Camaro.mtl', function( materials ) {
 			materials.preload();
 			carobjLoader.setMaterials( materials );
 			// carobjLoader.setMaterials(materials);
-			carobjLoader.load( 'objects/Camaro.obj', function ( camaro ) {
+			carobjLoader.load( 'img/objects/Camaro.obj', function ( camaro ) {
 			car1 = camaro;
 			car1.side = THREE.DoubleSide;
 			car1.scale.x = 2.7;
@@ -397,11 +397,11 @@ var audioLoader = new THREE.AudioLoader();
 	/* lock by Rory Vickers on BlendSwap */
 	var lockobjLoader = new THREE.OBJLoader( manager );
 	mtlLoader = new THREE.MTLLoader();
-	mtlLoader.setPath( 'objects/' );
+	mtlLoader.setPath( 'img/objects/' );
 		mtlLoader.load( 'padlock.mtl', function( materials ) {
 			materials.preload();
 			lockobjLoader.setMaterials( materials );
-			lockobjLoader.load( 'objects/padlock.obj', function ( padlock ) {
+			lockobjLoader.load( 'img/objects/padlock.obj', function ( padlock ) {
 			lock = padlock;
 			lock.position.z = 318;
 			lock.position.x = -90;

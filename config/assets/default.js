@@ -27,6 +27,8 @@ module.exports = {
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
         'public/lib/two/build/two.js',
         'public/lib/KeyboardState.js',
+        'public/three/three.min.js',
+        'public/three/*',
         // endbower
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
