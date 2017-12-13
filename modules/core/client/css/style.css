@@ -327,7 +327,7 @@ div.homepage {
   margin: 0;
   padding: 0;
   background: black url("../img/home-images/background.gif") no-repeat fixed center;
-	background-position: right 0;
+	background-position: right bottom 0;
   height: 100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
