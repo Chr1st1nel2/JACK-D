@@ -33,6 +33,42 @@
         controller: 'HomeController',
         controllerAs: 'vm'
       })
+      .state('about', {
+        url: '/about',
+        templateUrl: '/modules/core/client/views/about.client.view.html',
+        controller: 'HomeController',
+        controllerAs: 'vm'
+      })
+      .state('setting', {
+        url: '/setting',
+        templateUrl: '/modules/core/client/views/setting.client.view.html',
+        controller: 'HomeController',
+        controllerAs: 'vm'
+      })
+      .state('leaderboards', {
+        url: '/leaderboards',
+        templateUrl: '/modules/games/client/views/leaderboard.client.view.html',
+        controller: 'HomeController',
+        controllerAs: 'vm'
+      })
+      .state('gameSelect', {
+        url: '/games',
+        templateUrl: '/modules/games/client/views/gameSelect.client.view.html',
+        controller: 'HomeController',
+        controllerAs: 'vm'
+      })
+      .state('pong', {
+        url: '/games/pong',
+        templateUrl: '/modules/games/client/views/pong.client.view.html',
+        controller: 'HomeController',
+        controllerAs: 'vm'
+      })
+      .state('snake', {
+        url: '/games/snake',
+        templateUrl: '/modules/games/client/views/snake.client.view.html',
+        controller: 'HomeController',
+        controllerAs: 'vm'
+      })
       .state('not-found', {
         url: '/not-found',
         templateUrl: '/modules/core/client/views/404.client.view.html',

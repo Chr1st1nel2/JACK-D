@@ -10,12 +10,10 @@ module.exports = {
         'public/lib/angular-ui-notification/dist/angular-ui-notification.css',
         'public/lib/bootstrap/dist/css/bootstrap.css',
         'public/lib/bootstrap/dist/css/bootstrap-theme.css',
-        'public/lib/fullcalendar/dist/fullcalendar.css',
         // endbower
       ],
       js: [
         // bower:js
-        'public/lib/jquery/dist/jquery.js',
         'public/lib/angular/angular.js',
         'public/lib/angular-animate/angular-animate.js',
         'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
@@ -24,11 +22,9 @@ module.exports = {
         'public/lib/angular-resource/angular-resource.js',
         'public/lib/angular-ui-notification/dist/angular-ui-notification.js',
         'public/lib/angular-ui-router/release/angular-ui-router.js',
+        'public/lib/jquery/dist/jquery.js',
         'public/lib/ng-file-upload/ng-file-upload.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
-        'public/lib/moment/moment.js',
-        'public/lib/fullcalendar/dist/fullcalendar.js',
-        'public/lib/angular-ui-calendar/src/calendar.js',
         // endbower
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
@@ -38,6 +34,9 @@ module.exports = {
     ],
     less: [
       'modules/*/client/less/*.less'
+    ],
+    fonts: [
+      'modules/*/client/fronts/*.eot'
     ],
     sass: [
       'modules/*/client/scss/*.scss'
