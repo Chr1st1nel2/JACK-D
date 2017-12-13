@@ -4,7 +4,8 @@
 ### [Our Live Heroku App](https://mysterious-brushlands-34136.herokuapp.com)
 ##### Members: Jordan Pearson, Angela Fisher, Christine Li, and Kendall Aresu
 
-##Iteration 4.0
+## Iteration 4.0
+
 __Goal:__ To have the site completely finished with all the proper functionality.
 
 __Group Contribution Breakdown:__
