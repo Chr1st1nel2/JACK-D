@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head><script src="../../../../public/lib/two/build/two.js"></script>
-
-    <meta charset="utf-8" />
-    <title>Gamedev Canvas Workshop</title>
-    <style>
-    	* { padding: 0; margin: 0; }
-    	canvas { background: #eee; display: block; margin: 0 auto; }
-    </style>
+<head>
+  <script src="../../../../public/lib/two/build/two.js"></script>
+  <meta charset="utf-8" />
+  <title>Gamedev Canvas Workshop</title>
+  <style>
+  	* { padding: 0; margin: 0; }
+  	canvas { background: #eee; display: block; margin: 0 auto; }
+  </style>
 </head>
 <body>
-
-    <h1 style="postion:absolute;left:30px;top:80px;">Score 1: <span id="score1"></span></h1>
-    <h1 style="position.absolute;right:30px;top:80px;">Score 2: <span id="score2"></span></h1>
-
-<div id='draw-shapes'>
-</div>
+  <main role="main-home-wrapper" class="container">
+    <div class="row">
+      <section class="col-xs-12 col-sm-3 col-md-3 col-lg-3 ">
+      </section>
+      <section class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
+        <br>
+        <h1 style="color:white;postion:absolute;left:30px;top:80px;">Score 1: <span id="score1"></span></h1>
+        <h1 style="color:white;position.absolute;right:30px;top:80px;">Score 2: <span id="score2"></span></h1>
+        <div id='draw-shapes'></div>
+      </section>
+    </div>
+  </main>
 
 <script>
 console.log("script running");

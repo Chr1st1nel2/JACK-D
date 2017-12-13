@@ -23,11 +23,11 @@
 	padding: 10px;
 	margin-top: 5px;
 	text-align: center;
-	background-color: black;
+	background-color: #fb5353;
 	color: white;
 }
 
 #startGame:hover {
-	color: red;
+	color: black;
 	cursor: pointer;
 }
