@@ -29,6 +29,7 @@ module.exports = {
         'public/lib/KeyboardState.js',
         'public/three/three.min.js',
         'public/three/*',
+        'public/whiteface/whiteface.js',
         // endbower
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']

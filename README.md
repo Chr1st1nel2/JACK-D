@@ -16,7 +16,11 @@ Kendall Aresu-
 - finalized the scoring functionality of pong
 - fixed the flickering when pong was reset
 
-Jordan Pearson- placeholder
+Jordan Pearson-
+- Created pong from the ground up using the two library, including ball physics and collision detection.
+- Implemented snake using angular module
+- Created and implemented "White Face"
+- helped with various html fixes
 
 Christine Li- placeholder
 
