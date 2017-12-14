@@ -26,7 +26,13 @@ Jordan Pearson-
 - Created and implemented "White Face"
 - helped with various html fixes
 
-Christine Li- placeholder
+Christine Li-
+- Implemented flappyBox and tried to implement games into the site with other group members
+- Fixed and implemented the html, css, and styling for all pages excepted for the homepage
+- Implemented the footer
+- Changed css of the header in order to match with the footer
+- Created a button on the setting page
+- Removed all js folders and files to public folder and rerouted the dependencies
 
 __Screenshots__:
 
@@ -44,6 +50,18 @@ Settings:
 
 About page:
 ![itr4_about](/screenshots/iteration4/itr4_about.png)
+
+Games - pong:
+![itr4_pong](/screenshots/iteration4/itr4_pong.png)
+
+Games - snake:
+![itr4_snake](/screenshots/iteration4/itr4_snake.png)
+
+Games - flappyBox:
+![itr4_flappyBox](/screenshots/iteration4/itr4_flappyBox.png)
+
+Games - whiteface:
+![itr4_whiteface](/screenshots/iteration4/itr4_whiteface.png)
 
 
 
@@ -134,7 +152,6 @@ Settings page:
 
 Leaderboards page:
 ![it1_leaderboards](/screenshots/iteration1/it1_leaderboards.png)
-
 
 
 ## Iteration 1.0
