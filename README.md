@@ -15,6 +15,7 @@ __Group Contribution Breakdown:__
 Angela Fisher-
 - finished the home page w/ START button
 - cleaned up code, especially a lot of the html
+- attempted to make games appear on site (to no avail)
 
 Kendall Aresu-
 - finalized the scoring functionality of pong
