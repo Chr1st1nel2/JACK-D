@@ -4,13 +4,17 @@
 ### [Our Live Heroku App](https://mysterious-brushlands-34136.herokuapp.com)
 ##### Members: Jordan Pearson, Angela Fisher, Christine Li, and Kendall Aresu
 
+
+
 ## Iteration 4.0
 
 __Goal:__ To have the site completely finished with all the proper functionality.
 
 __Group Contribution Breakdown:__
 
-Angela Fisher- placeholder
+Angela Fisher-
+- finished the home page w/ START button
+- cleaned up code, especially a lot of the html
 
 Kendall Aresu-
 - finalized the scoring functionality of pong
@@ -54,16 +58,13 @@ Angela Fisher-
   - game selection page (no button yet): /games
   - snake game (no button yet): /games/snake
   - pong game (no button yet): /games/pong
-- created initial site-wide footer (working w/ Tony to fix)
+- created initial site-wide footer
 - migrated old home page to be the game selection page
 - created final home page, still a WIP!!
 - fixed issue with jQuery not loading
 - deleted last traces of unneeded modules
 
 Kendall Aresu-
-- placeholder
-
-Daniel York-
 - placeholder
 
 Jordan Pearson-

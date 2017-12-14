@@ -342,8 +342,8 @@ div.homepage {
 	left: 50%;
 	width: 15em;
 	height: 5em;
-	margin-top: -2em; /*set to a negative number 1/2 of your height*/
-	margin-left: -7em; /*set to a negative number 1/2 of your width*/
+	margin-top: -2em;
+	margin-left: -7em;
 	border: 1px solid #ccc;
 
   background: black url("../img/home-images/start-btn.jpeg") no-repeat;
