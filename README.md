@@ -19,6 +19,8 @@ Angela Fisher-
 Kendall Aresu-
 - finalized the scoring functionality of pong
 - fixed the flickering when pong was reset
+- updated About page
+- Added inputs to leaderboard page
 
 Jordan Pearson-
 - Created pong from the ground up using the two library, including ball physics and collision detection.
